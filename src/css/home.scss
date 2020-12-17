@@ -1,0 +1,172 @@
+// import 
+
+@import 'glitch';
+@import 'fonts';
+@import 'effects';
+@import 'utils';
+@import 'general';
+
+#canvas {
+    position: relative;
+    display: flex;
+    height: 100%;
+
+    &-main {
+        position: relative;
+        width: 60%;
+        // background-color: lightblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            margin-top: 52px;
+            font-size: 1.5rem;
+            // width: 30%;
+            text-align: left;
+        }
+    }
+
+    &-pic {
+        width: 40%;
+        // text-align: end;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            position: relative;
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            opacity: 0;
+            transform-origin: center center;
+            // &:hover{
+            //     transition: all 1000ms ease;
+            // }
+        }
+    }
+}
+
+
+.svg-wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 320px;
+    text-align: center;
+}
+
+.shape {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+    fill: transparent;
+    stroke: #19f6e8;
+    border-bottom: 5px solid black;
+    transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+
+.text {
+    font-family: 'HelveticaNeue';
+    // font-family: 'Roboto Condensed';
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 8px;
+    color: #fff;
+    top: -48px;
+    position: relative;
+}
+
+#myname {
+    position: relative;
+    height: 220px;
+
+    h1 {
+        font-size: 100px;
+        font-family: 'Nintendoid1';
+        position: absolute;
+    }
+}
+
+#webdev {
+    display: flex;
+    position: relative;
+    margin-bottom: 12px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    span {
+        position: relative;
+        margin-right: 12px;
+        font-size: 2rem !important;
+        margin-bottom: 16px;
+
+        // &:nth-child(2){
+        //     background-color: red;
+        //     // width: 400px;
+        // }
+        h3 {
+            font-size: 2rem !important;
+            top: 0;
+            left: 0;
+            width: 900px;
+            position: absolute;
+            color: #ea36af;
+            transition: all 500ms ease-in-out;
+            text-transform: uppercase;
+            text-shadow:
+                -1px -1px 0 #ccc,
+                1px -1px 0 #ccc,
+                -1px 1px 0 #ccc,
+                1px 1px 0 #ccc;
+        }
+    }
+}
+
+#gtmark {
+    font-weight: bold;
+    font-size: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-110%, -5px);
+    font-family: Nintendoid1;
+}
+
+.attention {
+    z-index: 121212;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    padding: 10px 24px;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: #fff;
+    font-family: 'Chakra Petch', sans-serif;
+    animation-name: flipColor;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flipColor {
+    0% {
+        color: #fff;
+        background-color: black;
+    }
+
+    49% {
+        color: #fff;
+        background-color: black;
+    }
+
+    50% {
+        background-color: #fff;
+        color: #000;
+    }
+
+    100% {
+        color: #000;
+        background-color: #fff;
+    }
+}

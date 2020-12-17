@@ -1,0 +1,96 @@
+
+// responsive layout
+$supersmall: 411px;
+$small: 576px;
+$medium: 768px;
+$tablet: 840px;
+$desktop: 960px;
+$navbarbreack: 995px;
+$widescreen: 1200px;
+$superwidescreen: 1400px;
+
+@mixin phone {
+    @media (max-height: #{812px}) {
+        @content;
+    }
+}
+
+@mixin supersmall {
+    @media (max-width: #{$supersmall}) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media (max-width: #{$small}) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media (max-width: #{$medium}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin navbarbreack {
+    @media (max-width: #{$navbarbreack}) {
+        @content;
+    }
+}
+
+@mixin widescreen {
+    @media (max-width: #{$widescreen}) {
+        @content;
+    }
+}
+
+@mixin superwidescreen {
+    @media (max-width: #{$superwidescreen}) {
+        @content;
+    }
+}
+
+// utils
+$sizes: 0,
+1,
+2,
+4,
+6,
+12;
+
+$distances: ("p": "padding", "m": "margin");
+$Directions: ("t": "top", "b": "bottom", "l": "left", "r": "right");
+
+@each $val,
+$key in $distances {
+
+    @each $i in $sizes {
+        .#{$val}-#{index($sizes,$i)-1} {
+            #{$key}: #{$i/4}rem;
+        }
+
+        @each $dkey,
+        $dvar in $Directions {
+
+            .#{$val+$dkey}-#{index($sizes,$i)-1} {
+                #{$key}-#{$dvar}: #{$i/4}rem;
+            }
+
+        }
+    }
+}
+
+// end utils

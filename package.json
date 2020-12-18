@@ -20,6 +20,7 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
-    "scrambling-text": "^1.0.4"
+    "scrambling-text": "^1.0.4",
+    "url-loader": "^4.1.1"
   }
 }

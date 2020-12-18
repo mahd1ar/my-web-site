@@ -5,12 +5,18 @@
     color: rgb(204, 204, 204);
 }
 
+$background : 'uXchDIKs4qI';
+// $background : '4hbJ-eymZ1o';
+$background : 'XJXWbfSo2f0';
+// $background : 'XJXWbfSo2f0';
+
 html,
 body {
     scroll-behavior: smooth;
     background-color: #111;
-    background-color: #2b0059;
-
+    // background-color: #2b0059;
+    user-select: none;
+    cursor: url('../img/mouse.png'), auto;
     @include small() {
         background-color: red;
     }
@@ -23,4 +29,8 @@ html {
 
 section {
     height: 100vh;
+}
+
+.pointer{
+    cursor: url('../img/pointer.png'),auto;
 }

@@ -14,30 +14,53 @@ function initScrambler() {
     const scrambler = new Scrambler();
     const whatIDo = [
         { str: 'Linux System Adminstrator', color: colorPallet.green },
-        { str: 'Network manager', color: colorPallet.blue },
+        { str: 'Network manager', color: colorPallet.cyan },
         { str: 'web developer', color: colorPallet.pink },
     ]
-    const handleScramble = (text) => {
-        webdev.innerText = text;
-    }
 
     let conter = 0
     setInterval(() => {
         const item = whatIDo[conter % whatIDo.length]
-        scrambler.scramble(item['str'], handleScramble);
+        scrambler.scramble(item['str'], (text) => {
+            webdev.innerText = text;
+        });
+        // console.log(scrambler)
+        scrambler.specialCharacters = item.str.split('')
         setTimeout(() => {
-            webdev.style.color = item['color']
+            // debugger
+            const {color } = item //, nxtColor = whatIDo[(conter+1) % whatIDo.length]['color']
+            // console.log(color,nxtColor)
+            // const off = 1,blr = '3px'
+            webdev.style.color = color
+            // textShadow = `
+            // -${off}px -${off}px ${blr} ${color},
+            // ${off}px -${off}px ${blr} ${nxtColor},
+            // -${off}px ${off}px ${blr} ${color},
+            // ${off}px ${off}px ${blr} ${nxtColor}`
+            
+            // = item['color']
         }, 500);
         conter++
-    }, 4500);
+    }, 5500);
 
+}
+
+function transition(){
+    var layerClass = "." + 'top'+ "-layer";
+    var layers = document.querySelectorAll(layerClass);
+    for (const layer of layers) {
+      layer.classList.toggle("active");
+    }
 }
 
 async function main() {
 
     // scamble I'am ...
-    initScrambler()
-
+    initScrambler();
+    setTimeout(() => {
+        
+        transition();
+    }, 2000);
 
     var grainedOptions = {
         "animate": true,

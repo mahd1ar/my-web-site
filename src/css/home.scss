@@ -5,7 +5,11 @@
 @import 'effects';
 @import 'utils';
 @import 'general';
+@import 'transition';
 
+body{
+    background: url('http://source.unsplash.com/#{$background}/600x400') center center/cover;
+}
 #canvas {
     position: relative;
     display: flex;
@@ -108,19 +112,19 @@
         //     // width: 400px;
         // }
         h3 {
-            font-size: 2rem !important;
+            font-size: 2.2rem !important;
             top: 0;
             left: 0;
             width: 900px;
             position: absolute;
-            color: #ea36af;
+            color: rgb(108, 20, 248);
             transition: all 500ms ease-in-out;
             text-transform: uppercase;
             text-shadow:
-                -1px -1px 0 #ccc,
-                1px -1px 0 #ccc,
-                -1px 1px 0 #ccc,
-                1px 1px 0 #ccc;
+                -1px -1px 0 #111,
+                1px -1px 0 #111,
+                -1px 1px 0 #111,
+                1px 1px 0 #111;
         }
     }
 }

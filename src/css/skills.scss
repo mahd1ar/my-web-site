@@ -1,0 +1,75 @@
+@import 'utils';
+@import 'general';
+@import 'fonts';
+@import 'css_components/colors';
+
+.giltch-box {
+    position: fixed;
+    background-color: #111;
+    border-radius: 0px;
+    transition: all 50ms ease-in-out;
+    background-color: #2e2e2e;
+    box-shadow: 1px 1px 0 rgb(85, 86, 88);
+
+    &::after {
+        content: '';
+        width: 100%;
+        background-color: #2e2e2e;
+        background-repeat: repeat;
+        position: absolute;
+        top: 0;
+    }
+}
+
+img#rocket {
+    height: 70%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 2;
+
+    // border-right: solid 10px $cyan;
+    box-sizing: content-box;
+    // box-shadow: 1px -1px 20px #fff;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: $cyan;
+    text-shadow: 3px 3px 0 #dedede;
+}
+
+.progress-container{
+    width: 240px;
+    position: relative;
+    border-radius: 6px;
+    margin-left: 1.6rem;
+    border: 2px solid lighten($color: $cyan, $amount: 70);
+    
+}
+
+.progress {
+    height: 100%;
+    width: 0px;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+        content: '';
+        width: 90%;
+        position: absolute;
+        top: 3px;
+        background-color: rgb(214, 245, 255);
+        height: 4px;
+    }
+}
+
+.skill-items-title{
+    width: 170px;
+}
+
+li{
+    margin-bottom: 0.7rem;
+}

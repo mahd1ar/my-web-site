@@ -1,0 +1,36 @@
+$cyan: #0ff;
+$black: #111;
+$green:#75fa69;
+$blue:rgb(4, 0, 255);
+$yellow:#ff0;
+$pink: #ea36af;
+$lightgreen : #6af6b8;
+$lightyellow: #f7da75;
+$chocolate: #f58b68;
+$fuchsia: #d06ee4;
+$lightred: #fe6265;
+
+$colors: ("cyan": $cyan,
+    "black": $black,
+    "green":$green,
+    "blue":$blue,
+    "yellow":$yellow,
+    "pink": $pink,
+    "lightgreen" :$lightgreen,
+    "lightyellow":$lightyellow,
+    "chocolate" : $chocolate,
+    "fuchsia" : $fuchsia,
+    "lightred" : $lightred,
+);
+
+
+@each $key,
+$val in $colors {
+    .bg-#{$key} {
+        background-color: $val !important;
+    }
+
+    .text-#{$key} {
+        color: $val !important;
+    }
+}

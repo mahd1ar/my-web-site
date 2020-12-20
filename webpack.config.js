@@ -2,7 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 
 const config = {
-  entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    skills: './src/skills.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
@@ -26,6 +29,13 @@ const config = {
               mimetype: 'image/png'
             }
           }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
         ]
       }
     ]

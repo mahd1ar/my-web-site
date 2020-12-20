@@ -20,6 +20,8 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
+    "animejs": "^3.2.1",
+    "bootstrap-4-grid": "^3.4.0",
     "scrambling-text": "^1.0.4",
     "url-loader": "^4.1.1"
   }

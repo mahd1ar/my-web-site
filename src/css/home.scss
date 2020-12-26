@@ -1,55 +1,87 @@
 // import 
 
-@import 'glitch';
-@import 'fonts';
-@import 'effects';
-@import 'utils';
-@import 'general';
-@import 'transition';
+@import 'css_components/glitch';
+@import 'css_components/fonts';
+@import 'css_components/effects';
+@import 'css_components/utils';
+@import 'css_components/general';
+@import 'css_components/transition';
+@import 'css_components/colors';
 
-body{
-    background: url('http://source.unsplash.com/#{$background}/600x400') center center/cover;
+// @import 'css_components/debug';
+
+body {
+    background: url('../img/home-banner.jpg') center center/cover;
 }
+
 #canvas {
     position: relative;
     display: flex;
+    justify-content: space-around;
     height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    @include widescreen() {
+        justify-content: space-between;
+        margin: 0 50px;
+    }
+
+    @include desktop() {
+        margin: 0 20px;
+    }
+
+    @include medium() {
+        margin: 0 10px;
+    }
+
+    @include small() {
+        flex-direction: column-reverse;
+        justify-content: space-evenly;
+        margin: 0;
+    }
 
     &-main {
         position: relative;
-        width: 60%;
-        // background-color: lightblue;
+        // flex-basis: 10%;
+        // width: 60%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
+        @include small() {
+            display: block;
+            z-index: 2;
+        }
+
         .container {
             margin-top: 52px;
             font-size: 1.5rem;
-            // width: 30%;
             text-align: left;
+
+            @include small() {
+                margin-top: 15px;
+                transform: translateY(-50px);
+                // z-index: 2;
+            }
         }
     }
 
     &-pic {
-        width: 40%;
-        // text-align: end;
+        // width: 40%;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        img {
-            position: relative;
-            width: 100%;
-            object-fit: cover;
-            height: 100%;
-            opacity: 0;
-            transform-origin: center center;
-            // &:hover{
-            //     transition: all 1000ms ease;
-            // }
+        canvas {
+            @include small() {
+                object-fit: cover;
+                height: 300px !important;
+                margin-top: 30px;
+                transform: scale(0.8);
+            }
         }
     }
 }
@@ -87,10 +119,34 @@ body{
     position: relative;
     height: 220px;
 
+    @include medium() {
+        height: 140px;
+    }
+
+    @include small() {
+        height: auto;
+    }
+
     h1 {
         font-size: 100px;
         font-family: 'Nintendoid1';
         position: absolute;
+
+        @include desktop() {
+            font-size: 80px;
+        }
+
+        @include medium() {
+            font-size: 60px;
+        }
+
+        @include small() {
+            font-size: 51px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 0;
+            z-index: 2;
+        }
     }
 }
 
@@ -101,30 +157,37 @@ body{
     justify-content: flex-start;
     align-items: flex-start;
 
+    @include small() {
+        flex-direction: column;
+        padding: 0 12px;
+        margin-bottom: 30px;
+    }
+
     span {
         position: relative;
         margin-right: 12px;
         font-size: 2rem !important;
         margin-bottom: 16px;
 
-        // &:nth-child(2){
-        //     background-color: red;
-        //     // width: 400px;
-        // }
+        @include small() {
+            margin-bottom: 0;
+        }
+
         h3 {
             font-size: 2.2rem !important;
+            font-weight: bold;
             top: 0;
             left: 0;
             width: 900px;
             position: absolute;
-            color: rgb(108, 20, 248);
+            color: $pink; //rgb(108, 20, 248);
             transition: all 500ms ease-in-out;
             text-transform: uppercase;
-            text-shadow:
-                -1px -1px 0 #111,
-                1px -1px 0 #111,
-                -1px 1px 0 #111,
-                1px 1px 0 #111;
+
+            @include small() {
+                position: relative;
+                font-size: 2rem !important;
+            }
         }
     }
 }
@@ -137,6 +200,17 @@ body{
     left: 0;
     transform: translate(-110%, -5px);
     font-family: Nintendoid1;
+}
+
+.skill-item{
+    @include small(){
+        padding: 0 12px;
+        margin-bottom: 10px !important;
+        &::after{
+            content: '>';
+            margin-left: 12px;
+        }
+    }
 }
 
 .attention {

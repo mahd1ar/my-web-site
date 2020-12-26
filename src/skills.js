@@ -1,14 +1,10 @@
 import 'bootstrap-4-grid/css/grid.min.css';
 import "./css/skills.scss";
 import anime from 'animejs/lib/anime.es.js';
-import { timeout } from './components/helper';
 
-// function main(){
+let { default: rocket } = require('./giphy/rocket.webp')
 
-
-
-// }
-// window.onload = main()
+document.querySelector('img').src = rocket
 
 class Box {
     constructor(count, fr) {
@@ -80,14 +76,45 @@ setInterval(() => {
     oldTv.start();
 }, 1100);
 
-// document.querySelector('.progress').dataset.progress
 window.onload = async () => {
 
     anime({
-        targets: '.progress',
+        targets: '.progress-item',
         width: (el, i) => el.dataset.progress + '%',
         delay: (el, i, l) => (i + 2) * 150,
     });
+
+    Array.
+        from(document.querySelectorAll('.progress-percent '))
+        .forEach((i, index) => {
+
+            const datap = {
+                perscent: '0%'
+            };
+
+            anime({
+                targets: datap,
+                perscent: i.previousElementSibling.children[0].dataset.progress + '%',
+                round: 1,
+                easing: 'linear',
+                delay: index * 400 - 100,
+                update: function () {
+                    i.innerHTML = datap.perscent;
+                }
+            });
+
+        })
+
+    var options = {
+        "animate": true,
+        "patternWidth": 267.23,
+        "patternHeight": 500,
+        "grainOpacity": 0.11,
+        "grainDensity": 1.51,
+        "grainWidth": 1.5,
+        "grainHeight": 1
+    }
+    grained("#sec", options);
 
 
 }

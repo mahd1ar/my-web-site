@@ -32,6 +32,10 @@ const config = {
         ]
       },
       {
+        test: /\.(jpe?g|webp)$/,
+        use: "file-loader"
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',

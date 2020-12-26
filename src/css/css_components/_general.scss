@@ -1,0 +1,71 @@
+@mixin debug($size) {
+    &::after {
+        content: "#{$size}";
+        color: wheat;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(204, 204, 204);
+}
+
+$background : 'uXchDIKs4qI';
+// $background : '4hbJ-eymZ1o';
+$background : 'XJXWbfSo2f0';
+// $background : 'XJXWbfSo2f0';
+
+html,
+body {
+    scroll-behavior: smooth;
+    background-color: #111;
+    // background-color: #2b0059;
+    user-select: none;
+    cursor: url('../img/mouse.png'), auto;
+
+    // debug
+    @include superwidescreen() {
+        @include debug(superwidescreen);
+    }
+
+    @include widescreen() {
+        @include debug(widescreen);
+    }
+
+    @include desktop() {
+        @include debug(desktop);
+    }
+
+    @include tablet() {
+        @include debug(tablet);
+    }
+
+    @include medium() {
+        @include debug(medium);
+    }
+
+    @include small() {
+        @include debug(small);
+        background-color: red;
+    }
+}
+
+html {
+    overflow-x: hidden;
+    // cursor: none;
+}
+
+section {
+    height: 100vh;
+}
+
+.pointer {
+    cursor: url('../img/pointer.png'), auto;
+}

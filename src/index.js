@@ -1,21 +1,33 @@
 import './css/home.scss'
-// import anime from 'animejs'
 import { imgSrc, Glitch } from './components/glitchImg.js'
-import Scrambler from 'scrambling-text'
 import colorPallet from './components/colorPallet.js'
-
-window.onload = main()
-
+import { BrowserD } from './components/helper';
 
 window.globals = new Map();
+const promises = [];
 
-function initScrambler() {
+function onloadfunc() {
+    return new Promise((resolve) => {
+        window.onload = () => {
+            console.log('window on load')
+            resolve()
+        }
+    })
+}
+
+promises.push(onloadfunc())
+
+async function initScrambler() {
+
+    const { default: Scrambler } = await import('scrambling-text')
+
+
     const webdev = document.querySelector('#webdev h3')
     const scrambler = new Scrambler();
     const whatIDo = [
-        { str: 'Linux System Adminstrator', color: colorPallet.green },
-        { str: 'Network manager', color: colorPallet.cyan },
-        { str: 'web developer', color: colorPallet.pink },
+        { w:560,str: 'Linux System Adminstrator', color: colorPallet.green },
+        { w:500,str: 'Network manager', color: colorPallet.cyan },
+        { w:480,str: 'web developer', color: colorPallet.pink },
     ]
 
     let conter = 0
@@ -24,43 +36,42 @@ function initScrambler() {
         scrambler.scramble(item['str'], (text) => {
             webdev.innerText = text;
         });
-        // console.log(scrambler)
         scrambler.specialCharacters = item.str.split('')
         setTimeout(() => {
-            // debugger
-            const {color } = item //, nxtColor = whatIDo[(conter+1) % whatIDo.length]['color']
-            // console.log(color,nxtColor)
-            // const off = 1,blr = '3px'
+            const { color } = item
             webdev.style.color = color
-            // textShadow = `
-            // -${off}px -${off}px ${blr} ${color},
-            // ${off}px -${off}px ${blr} ${nxtColor},
-            // -${off}px ${off}px ${blr} ${color},
-            // ${off}px ${off}px ${blr} ${nxtColor}`
-            
-            // = item['color']
         }, 500);
         conter++
-    }, 5500);
+    }, 2500);
 
 }
 
-function transition(){
-    var layerClass = "." + 'top'+ "-layer";
+function transition() {
+    const html = document.querySelector('html'),
+        loading = document.querySelector('.loading')
+    html.style.overflowY = 'hidden'
+    var layerClass = "." + 'top' + "-layer";
     var layers = document.querySelectorAll(layerClass);
     for (const layer of layers) {
-      layer.classList.toggle("active");
+        layer.classList.toggle("active");
     }
+    setTimeout(() => {
+        loading.style.display = 'none'
+    }, 1000);
+    setTimeout(() => {
+        Array.from(document.querySelectorAll('.top-layer'))
+            .forEach(element => {
+                element.style.display = 'none'
+            })
+        html.style.overflowY = ''
+    }, 2000);
 }
 
 async function main() {
-
+    console.log('init main function')
     // scamble I'am ...
+
     initScrambler();
-    setTimeout(() => {
-        
-        transition();
-    }, 2000);
 
     var grainedOptions = {
         "animate": true,
@@ -71,7 +82,7 @@ async function main() {
         "grainWidth": 1.5,
         "grainHeight": 1
     }
-    
+
     grained('#main-section', grainedOptions)
 
     // >
@@ -87,7 +98,9 @@ async function main() {
         })
     })
 
-
+    // setTimeout(() => {
+    //     transition()
+    // }, 1000);
     return 0;
 
 }
@@ -102,16 +115,36 @@ let isLoaded = false;
 let glitch
 
 window.setup = function () {
+
+    console.log(BrowserD.width)
+    switch (BrowserD.width) {
+        case 'desktop':
+            windowW = 300;
+            windowH = 400;
+            break;
+        case 'medium':
+            windowW = 350
+            windowH = 450
+            break;
+        default:
+            break;
+    }
+   
     background(0);
     const canvas = createCanvas(windowW, windowH);
-    loadImage(imgSrc, function (img) {
-        glitch = new Glitch(img);
-        isLoaded = true;
-    });
     canvas.elt.id = "imgProfile";
     canvas.parent('canvas-pic');
-    frameRate(10)
+    return new Promise((resolve) => {
 
+        loadImage(imgSrc, function (img) {
+            glitch = new Glitch(img);
+            isLoaded = true;
+
+            resolve()
+        });
+        frameRate(10)
+
+    })
 }
 
 window.draw = function () {
@@ -127,3 +160,7 @@ window.draw = function () {
     // text('FPS: ' + floor(frameRate()), 20, 30);
 
 }
+Promise.all(promises).then(() => {
+    console.log('after promise all')
+    main()
+})

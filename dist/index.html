@@ -5,20 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000">
-    <title> mahdiar Anari</title>
+    <title> mahdiyar Anari online resume</title>
+    <style>
+        .loading {
+            background-color: #2b0059;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 3;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .loading.div {
+            color: wheat;
+        }
+    </style>
 </head>
 
 <body>
+    <!--  loading -->
+    <!-- <section class="loading">
+        <div>
+            LOADING
+        </div>
+    </section> -->
     <!-- page transition  -->
-    <div class="top-layer"></div>
+    <!-- <div class="top-layer"></div>
     <div class="top-layer top-layer--2"></div>
     <div class="top-layer top-layer--3"></div>
     <div class="top-layer top-layer--4"></div>
-    <div class="top-layer top-layer--5"></div>
+    <div class="top-layer top-layer--5"></div> -->
 
-    <span id="gtmark">
-        &gt;
-    </span>
+    <span id="gtmark">&gt;</span>
 
     <section id="main-section">
         <div id="canvas">
@@ -31,17 +51,15 @@
                     </div>
 
                     <div id="webdev" class="font-chakra">
-                        <span>
-                            I'm a
-                        </span>
+                        <span>I'm a</span>
                         <span>
                             <h3 class=" glitch2" title="web developer">web developer</h3>
                         </span>
                     </div>
 
-                    <div class="effect-crt pointer" data-ref="#">skills</div>
-                    <div class="effect-crt pointer" data-ref="#">education</div>
-                    <div class="effect-crt pointer" data-ref="#">about me</div>
+                    <div class="skill-item effect-crt pointer" data-ref="#">skills</div>
+                    <div class="skill-item effect-crt pointer" data-ref="#">education</div>
+                    <div class="skill-item effect-crt pointer" data-ref="#">about me</div>
                 </div>
 
             </div>

@@ -17,12 +17,13 @@
     "sass-loader": "^10.1.0",
     "style-loader": "^2.0.0",
     "webpack": "^5.11.0",
+    "file-loader": "^6.2.0",
+    "url-loader": "^4.1.1",
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
     "animejs": "^3.2.1",
     "bootstrap-4-grid": "^3.4.0",
-    "scrambling-text": "^1.0.4",
-    "url-loader": "^4.1.1"
+    "scrambling-text": "^1.0.4"
   }
 }

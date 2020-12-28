@@ -16,6 +16,23 @@ body {
     }
 
     &-img-container {
+
+        img#rocket {
+            height: 70%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center top;
+            z-index: 2;
+            box-sizing: content-box;
+
+            @include medium() {
+                width: 450px;
+                height: 220px;
+            }
+
+            border: 2px solid;
+        }
+
         @include medium() {
             height: 270px !important;
             margin-top: 22px;
@@ -25,21 +42,6 @@ body {
 
     // &-main-container {
     // }
-}
-
-img#rocket {
-    height: 70%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center top;
-    z-index: 2;
-    box-sizing: content-box;
-
-    @include medium() {
-        width: 450px;
-        height: 220px;
-        border: 2px solid;
-    }
 }
 
 .giltch-box {
@@ -106,7 +108,8 @@ h1 {
 
     &-percent {
         margin-left: 12px;
-        @include small(){
+
+        @include small() {
             width: 30px;
         }
     }
@@ -127,18 +130,19 @@ h1 {
         }
 
     }
-    
-    
+
+
     @include tablet() {
         width: 130px;
         height: 40px;
     }
-    
+
     @include medium() {
         width: 300px;
         font-weight: bold;
         font-size: 25px;
     }
+
     @include small() {
         width: 145px;
     }
@@ -146,7 +150,8 @@ h1 {
 
 li {
     margin-bottom: 0.7rem;
-    @include small(){
+
+    @include small() {
         justify-content: space-between;
     }
 }

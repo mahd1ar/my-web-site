@@ -4,7 +4,8 @@ const path = require('path');
 const config = {
   entry: {
     main: './src/index.js',
-    skills: './src/skills.js'
+    skills: './src/skills.js',
+    education: './src/education.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

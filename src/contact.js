@@ -1,43 +1,13 @@
 import 'bootstrap-4-grid/css/grid.min.css';
-import "./css/education.scss";
+import "./css/contact.scss";
+import { Rquest } from './components/request';
+import anime from 'animejs/lib/anime.es.js';
 
-const h1 = import('./img/frame/1.png');
-const h2 = import('./img/frame/2.png');
-const h3 = import('./img/frame/3.png');
-const h4 = import('./img/frame/4.png');
-const h5 = import('./img/frame/5.png');
-
-Promise.all([h1, h2, h3, h4, h5]).then((valuse) => {
-    const img = document.querySelector('#love img');
-
-    let i = 0;
-    let d = true;
-    setInterval(() => {
-        img.src = valuse[i].default;
-        if (i === 4)
-            d = false;
-        else if (i === 0)
-            d = true;
-
-        d ? i++ : i--;
-    }, 250);
-});
-
-import('./giphy/studycat.webp').then(({ default: gif }) => {
-    document.querySelectorAll('img')[0].src = gif;
-});
-
-import('./giphy/fail.webp').then(({ default: gif2 }) => {
-    document.querySelectorAll('img')[1].src = gif2;
-});
-
-import('./giphy/hackerman.webp').then(({ default: gif3 }) => {
-    document.querySelectorAll('img')[3].src = gif3;
-});
-
-import('./giphy/mrmobile.webp').then(({ default: gif }) => {
-    document.querySelectorAll('img')[2].src = gif;
-});
+['github', 'linkedin', 'twitter', 'telegram','gmail'].forEach((sn) => {
+    import(`./logos/${sn}.png`).then(i => {
+        document.querySelector(`img[alt="${sn}"]`).src = i.default
+    })
+})
 
 class Box {
     constructor(count, fr) {
@@ -72,7 +42,7 @@ class Box {
         ];
 
         try {
-            element.style.clipPath = clipPathArray[Math.floor(Math.random() * clipPathArray.length)];
+            element.style.clipPath = clipPathArray[Math.floor(Math.random() * clipPathArray.length)]
         } catch (error) {
 
         }
@@ -82,16 +52,16 @@ class Box {
         Array.from(this.placeholder.children)
             .forEach((div) => {
 
-                const rnd = `${String(this.rand())}px`;
-                const positionX = `${String(this.rand(0, window.innerWidth))}px`;
-                const positionY = `${String(this.rand(0, window.innerHeight))}px`;
+                const rnd = String(this.rand()) + 'px',
+                    positionX = String(this.rand(0, window.innerWidth)) + 'px',
+                    positionY = String(this.rand(0, window.innerHeight)) + 'px';
 
                 div.style.width = rnd;
                 div.style.height = rnd;
                 div.style.top = positionY;
                 div.style.left = positionX;
-                this.applyEffects(div);
-            });
+                this.applyEffects(div)
+            })
 
 
     }
@@ -111,7 +81,7 @@ setInterval(() => {
 
 window.onload = async () => {
 
-    const options = {
+    var options = {
         "animate": true,
         "patternWidth": 267.23,
         "patternHeight": 500,
@@ -119,8 +89,20 @@ window.onload = async () => {
         "grainDensity": 1.51,
         "grainWidth": 1.5,
         "grainHeight": 1
-    };
+    }
     grained("#sec", options);
 
+    const r = new Rquest({blank: true})
 
-};
+    setTimeout(() => {
+        
+        anime({
+            targets: 'i',
+            rotate:[75,0],
+            opacity:[0,1],
+            delay: anime.stagger(100),
+        })
+
+    }, 2000);
+
+}

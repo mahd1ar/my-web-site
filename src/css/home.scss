@@ -172,6 +172,11 @@ body {
         @include small() {
             margin-bottom: 0;
         }
+        &:nth-child(2){
+            @include small() {
+                margin-top: -12px;
+            }
+        }
 
         h3 {
             font-size: 2.2rem !important;

@@ -27,7 +27,9 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "axios": "^0.21.1",
     "bootstrap-4-grid": "^3.4.0",
-    "scrambling-text": "^1.0.4"
+    "scrambling-text": "^1.0.4",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

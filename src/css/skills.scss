@@ -4,7 +4,7 @@
 @import 'css_components/colors';
 
 body {
-    background: url(https://source.unsplash.com/Q1p7bh3SHj8/900x400) center center/cover;
+    background: url('../img/space.jpeg') center center/cover;
     // @include medium(){
     //     overflow: scroll;
     // }
@@ -38,10 +38,16 @@ body {
             margin-top: 22px;
             justify-content: center;
         }
+        @include small(){
+            margin-top: 0;
+        }
     }
 
-    // &-main-container {
-    // }
+    &-main-container {
+    @include small(){
+        transform: translateY(-20px);
+    }
+    }
 }
 
 .giltch-box {
@@ -81,8 +87,9 @@ h1 {
         border: 2px solid lighten($color: $cyan, $amount: 70);
 
         @include small() {
-            width: 160px;
+            width: 140px;
             margin: 0;
+            height: 32px;
         }
     }
 
@@ -111,22 +118,28 @@ h1 {
 
         @include small() {
             width: 30px;
+            margin-left: 5px;
         }
     }
 }
 
 
 .skill-items-title {
-    width: 170px;
-
+    width: 250px;
+    overflow: hidden;
     span {
         display: inline-block;
         height: 100%;
+        font-size: 26px;
 
         @include medium() {
             background-color: rgb(0, 0, 0);
             overflow: hidden;
             padding: 4px 16px;
+        }
+        @include small(){
+            background-color: unset;
+            // font-size: 10px;
         }
 
     }

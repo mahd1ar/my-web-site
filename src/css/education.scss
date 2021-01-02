@@ -8,6 +8,10 @@ $bg:'a-5R9mE3ryI';
 
 body {
     background: url('../img/street.jpeg') center center/cover;
+    @include small(){
+        // background-attachment: local;
+        background-size: contain;
+    }
 }
 
 section {
@@ -25,6 +29,32 @@ section {
         max-width: unset;
     }
 
+    .row:nth-of-type(even){
+        @include medium(){
+            flex-direction: column-reverse;
+        }
+        div {
+            @include medium(){
+                justify-content: flex-end;
+            }
+            @include small(){
+                justify-content: center;
+            }
+        }
+    }
+
+    .row:nth-of-type(odd){
+        div {
+            @include medium(){
+                justify-content: flex-start;
+            }
+            @include small(){
+                justify-content: center;
+
+            }
+        }
+    }
+   
     &-img-container {
 
         img.rocket {
@@ -41,9 +71,20 @@ section {
                 height: 220px;
             }
 
+            @include small(){
+                transform: scale(0.7);
+           }
+
             &-2 {
                 transform: scale(0.9);
                 height: 380px;
+
+                @include medium(){
+                    height: auto;
+                }
+                @include small(){
+                    transform: scale(0.7);
+                }
             }
 
         }
@@ -52,6 +93,9 @@ section {
             height: 270px !important;
             margin-top: 22px;
             justify-content: center;
+        }
+        @include small(){
+            height: auto !important;
         }
     }
 
@@ -62,15 +106,35 @@ section {
             h2 {
                 text-transform: uppercase;
                 font-size: 40px;
+                color: #ebebeb;
+
+                @include medium(){
+                    font-size: 35px;
+                }
+
+                @include small(){
+                    font-size: 30px;
+                }
             }
 
             div {
                 margin: 8px;
 
+                @include medium(){
+                    margin: 0;
+                }
+
                 .degree {
                     font-size: 24px;
                     background: #000;
                     display: inline-block;
+
+                    @include tablet(){
+                        background: unset;
+                    }
+                    @include small(){
+                        font-size: 20px;
+                    }
                 }
 
                 .date {
@@ -106,6 +170,11 @@ h1 {
     text-shadow: 3px 3px 0 #dedede;
     margin-top: 23vh;
     position: relative;
+
+    @include small(){
+        font-size: 35px;
+        margin-top: 35vh;
+    }
 
     &+div {
         justify-content: center;
@@ -169,16 +238,20 @@ h1 {
 
     img {
         width: 51px;
-        margin-bottom: 8px;
+        margin-bottom: 20px;
     }
     
     div {
         display: inline-block;
-        // width: 300px;
+        font-size: 14px;
         margin-bottom: 12px;
         border-top: 3px dashed $lightyellow;
         padding-top: 12px;
         text-align: center;
         color: lighten($color: $lightyellow, $amount: 20);
+        @include small(){
+            font-size: 9px;
+            line-height: 15px;
+        }
     }
 }

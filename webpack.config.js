@@ -1,15 +1,46 @@
 const webpack = require('webpack');
 const path = require('path');
+const fs = require('fs');
+var debug = process.env.NODE_ENV !== "production";
+
+console.log('debug = ', debug)
+const plugins = !debug ? [
+  new webpack.optimize.UglifyJsPlugin({
+
+    // Eliminate comments
+       comments: false,
+
+   // Compression specific options
+      compress: {
+        // remove warnings
+           warnings: false,
+
+        // Drop console statements
+           drop_console: true
+      },
+   })
+]
+: []
+
+const entry = {}
+fs
+  .readdirSync(path.resolve(__dirname, 'dist'))
+  .filter(e => e.split('.')[1] === 'html')
+  .map(i => {
+    const fileName = i.split('.')[0]
+    return {
+      [fileName]: `./src/${fileName}.js`
+    }
+  }).forEach(i => {
+    Object.assign(entry, i)
+  })
 
 const config = {
-  entry: {
-    main: './src/index.js',
-    skills: './src/skills.js',
-    education: './src/education.js',
-  },
+  entry,
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    path: path.resolve(__dirname, 'dist/assets'),
+    filename: '[name].bundle.js',
+    publicPath: 'assets/'
   },
   module: {
     rules: [
@@ -44,7 +75,8 @@ const config = {
         ]
       }
     ]
-  }
+  },
+  plugins
 };
 
 module.exports = config;

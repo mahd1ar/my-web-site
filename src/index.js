@@ -1,7 +1,8 @@
 import './css/home.scss'
 import { imgSrc, Glitch } from './components/glitchImg.js'
 import colorPallet from './components/colorPallet.js'
-import { BrowserD } from './components/helper';
+import { BrowserD, removeLoading } from './components/helper';
+import { Rquest } from './components/request';
 
 window.globals = new Map();
 const promises = [];
@@ -25,9 +26,9 @@ async function initScrambler() {
     const webdev = document.querySelector('#webdev h3')
     const scrambler = new Scrambler();
     const whatIDo = [
-        { w:560,str: 'Linux System Adminstrator', color: colorPallet.green },
-        { w:500,str: 'Network manager', color: colorPallet.cyan },
-        { w:480,str: 'web developer', color: colorPallet.pink },
+        { w: 560, str: 'Linux System Adminstrator', color: colorPallet.green },
+        { w: 500, str: 'Network manager', color: colorPallet.cyan },
+        { w: 480, str: 'web developer', color: colorPallet.pink },
     ]
 
     let conter = 0
@@ -42,33 +43,12 @@ async function initScrambler() {
             webdev.style.color = color
         }, 500);
         conter++
-    }, 2500);
+    }, 4500);
 
-}
-
-function transition() {
-    const html = document.querySelector('html'),
-        loading = document.querySelector('.loading')
-    html.style.overflowY = 'hidden'
-    var layerClass = "." + 'top' + "-layer";
-    var layers = document.querySelectorAll(layerClass);
-    for (const layer of layers) {
-        layer.classList.toggle("active");
-    }
-    setTimeout(() => {
-        loading.style.display = 'none'
-    }, 1000);
-    setTimeout(() => {
-        Array.from(document.querySelectorAll('.top-layer'))
-            .forEach(element => {
-                element.style.display = 'none'
-            })
-        html.style.overflowY = ''
-    }, 2000);
 }
 
 async function main() {
-    console.log('init main function')
+    console.log('init main func')
     // scamble I'am ...
 
     initScrambler();
@@ -85,7 +65,8 @@ async function main() {
 
     grained('#main-section', grainedOptions)
 
-    // >
+    removeLoading()
+
     document.querySelectorAll('div.effect-crt').forEach(f => {
 
         f.addEventListener('mouseover', e => {
@@ -98,9 +79,6 @@ async function main() {
         })
     })
 
-    // setTimeout(() => {
-    //     transition()
-    // }, 1000);
     return 0;
 
 }
@@ -129,7 +107,7 @@ window.setup = function () {
         default:
             break;
     }
-   
+
     background(0);
     const canvas = createCanvas(windowW, windowH);
     canvas.elt.id = "imgProfile";
@@ -163,4 +141,6 @@ window.draw = function () {
 Promise.all(promises).then(() => {
     console.log('after promise all')
     main()
+    new Rquest({blank:false})
+    
 })

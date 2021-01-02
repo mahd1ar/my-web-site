@@ -1,0 +1,197 @@
+@import 'css_components/utils';
+@import 'css_components/general';
+@import 'css_components/fonts';
+@import 'css_components/colors';
+
+body {
+    background: url('../img/beach.jpeg') center top/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: auto !important;
+    padding-bottom: 20px;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#page {
+    @include medium() {
+        overflow: hidden;
+    }
+
+
+    &-main-container {
+        margin-top: 300px;
+        margin-bottom: 70px;
+
+        @include desktop() {
+            margin-top: 120px;
+            margin-bottom: 90px;
+        }
+
+        @include small() {
+            margin-top: 20px;
+            margin-bottom: 45px;
+        }
+
+        h1 {
+            line-height: 52px;
+            font-size: 2.5rem;
+            color: $pink;
+            text-shadow: 3px 3px 0 #181111;
+
+            @include small() {
+                font-size: 26px;
+                line-height: 37px;
+            }
+        }
+    }
+
+    &-logos-container {
+        @include small() {
+            display: flex;
+            flex-flow: wrap;
+            justify-content: space-evenly;
+        }
+
+        span {
+            display: inline-block;
+            position: relative;
+
+
+            &:last-child {
+                margin-bottom: 20px;
+            }
+
+            @include medium() {
+                &:last-child {
+                    margin-top: 85px;
+                }
+            }
+
+            @include small() {
+                margin-bottom: 50px;
+                &:last-child {
+                    margin-top: 0px;
+                    margin-bottom: 50px;
+                }
+            }
+
+            img {
+
+                margin: 0 20px;
+                width: 100px;
+                border: 3px solid #3860d1;
+                box-shadow: 15px 15px #3860d1;
+
+                @include small() {
+                    width: 80px;
+                }
+
+                &[alt="twitter"],
+                &[alt="telegram"] {
+                    opacity: 0.9;
+                }
+
+                &[alt="gmail"] {
+                    box-shadow: 15px 15px #6c757d;
+                    border: 3px dotted wheat;
+
+                    &:hover {
+                        transform: translate(7px, 7px);
+                        box-shadow: 8px 8px #48494e;
+                    }
+                }
+
+                &:hover {
+                    transform: translate(7px, 7px);
+                    box-shadow: 8px 8px #3860d1;
+                }
+            }
+
+            i {
+                position: absolute;
+                top: -50%;
+                left: 20px;
+                padding: 5px 20px;
+                font-size: 25px;
+                font-family: 'Chakra Petch';
+                background-color: #222;
+                transform: rotate(45deg);
+                transform-origin: center left;
+                opacity: 0;
+
+                @include small() {
+                    top: -40%;
+                    font-size: 20px;
+                    padding: 2px 20px;
+                }
+            }
+
+        }
+    }
+}
+
+.giltch-box {
+    position: fixed;
+    background-color: #111;
+    border-radius: 0px;
+    transition: all 50ms ease-in-out;
+    background-color: #595959;
+    box-shadow: 1px 1px 0 rgb(85, 86, 88);
+
+    &::after {
+        content: '';
+        width: 100%;
+        background-color: #2e2e2e;
+        background-repeat: repeat;
+        position: absolute;
+        top: 0;
+    }
+}
+
+
+
+#love {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img {
+        width: 51px;
+        margin-bottom: 20px;
+    }
+
+    div {
+        display: inline-block;
+        font-size: 14px;
+        margin-bottom: 12px;
+        border-top: 3px dashed $lightgreen;
+        padding-top: 12px;
+        text-align: center;
+        color: darken($color: $lightgreen, $amount: 30);
+
+        @include small() {
+            font-size: 9px;
+            line-height: 15px;
+        }
+    }
+}

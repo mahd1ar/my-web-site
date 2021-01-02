@@ -4,13 +4,17 @@ const fs = require('fs');
 const TerserPlugin = require("terser-webpack-plugin");
 const { exec } = require('child_process');
 
-function copyPublicToDist() {
+function copyPublicToDist(isDebug) {
   const dist = path.join(__dirname, 'dist'),
     src = path.join(__dirname, 'public')
 
-  fs.rmdirSync(path.join(__dirname, 'dist'), { recursive: true })
-  fs.mkdirSync(path.join(__dirname, 'dist'))
-  exec(`cp -r ${src}/* ${dist}/`, (err, stdout, stderr) => {
+  fs.rmdirSync(path.join(__dirname, 'dist'), { recursive: true });
+  fs.mkdirSync(path.join(__dirname, 'dist'));
+
+
+  const command = `cp -${isDebug?'sR':'r'} ${src}/* ${dist}/`
+console.log(command)
+  exec(command, (err, stdout, stderr) => {
     if (err) {
       console.error(err);
       return;
@@ -20,11 +24,12 @@ function copyPublicToDist() {
 }
 
 module.exports = env => {
-  copyPublicToDist();
-
+  
   var debug = env.NODE_ENV !== "production";
-  debug = true;
   console.log('debug = ', debug)
+  
+  copyPublicToDist(debug);
+  debug = true
 
   const optimization = !debug ? {
     minimize: true,

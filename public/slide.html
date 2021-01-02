@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main x-data="alpinefn()">
+        <template  x-for="sec in sections" :key="sec.id" >
+            <section :data-id="sec.id" @click="nextPage">
+                <img :src="sec.imgs">
+                <div class="contents">
+
+                    <div class="txt-container">
+                        <h1 class="font-chakra" x-text="sec.txt"></h1>
+                        <p>some descption</p>
+                    </div>
+                    
+                </div>
+            </section>
+        </template>
+
+    </main>
+    <script src="./assets/slide.bundle.js"></script>
+
+</body>
+
+</html>

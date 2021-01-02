@@ -1,5 +1,3 @@
 node_modules
 dist/
-!dist/*.html
-!dist/lib/*
 resources.txt

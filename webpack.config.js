@@ -2,11 +2,28 @@ const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const TerserPlugin = require("terser-webpack-plugin");
+const { exec } = require('child_process');
+
+function copyPublicToDist() {
+  const dist = path.join(__dirname, 'dist'),
+    src = path.join(__dirname, 'public')
+console.log(dist,src)
+  fs.rmdirSync(path.join(__dirname, 'dist'), { recursive: true })
+  fs.mkdirSync(path.join(__dirname, 'dist'))
+  exec(`cp -r ${src}/* ${dist}/`, (err, stdout, stderr) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log(stdout);
+  });
+}
 
 module.exports = env => {
+  copyPublicToDist();
 
   var debug = env.NODE_ENV !== "production";
-debug = true;
+  debug = true;
   console.log('debug = ', debug)
 
   const optimization = !debug ? {

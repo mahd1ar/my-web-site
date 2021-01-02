@@ -110,7 +110,7 @@ setInterval(() => {
 }, 1100);
 
 window.onload = async () => {
-
+    console.log('win loaded')
     const options = {
         "animate": true,
         "patternWidth": 267.23,

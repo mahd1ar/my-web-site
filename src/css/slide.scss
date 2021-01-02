@@ -1,0 +1,50 @@
+@import 'css_components/utils';
+@import 'css_components/general';
+@import 'css_components/fonts';
+@import 'css_components/colors';
+
+
+// main{
+    // display: flex;
+    // flex: 0 0 100%;
+// }
+section {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    display: flex;
+    img{
+        position: absolute;
+        object-fit: cover;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+.contents{
+width: 300px;
+    margin: auto;
+    .txt-container{
+        position: relative;
+        background: #111;
+        white-space: nowrap;
+        overflow: hidden;
+        h1{
+            position: relative;
+        }
+    }
+}
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

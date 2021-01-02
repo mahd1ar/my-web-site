@@ -1,82 +1,79 @@
 const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
-var debug = process.env.NODE_ENV !== "production";
+const TerserPlugin = require("terser-webpack-plugin");
 
-console.log('debug = ', debug)
-const plugins = !debug ? [
-  new webpack.optimize.UglifyJsPlugin({
+module.exports = env => {
 
-    // Eliminate comments
-       comments: false,
+  var debug = env.NODE_ENV !== "production";
+debug = true;
+  console.log('debug = ', debug)
 
-   // Compression specific options
-      compress: {
-        // remove warnings
-           warnings: false,
+  const optimization = !debug ? {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        compress: { pure_funcs: ['console.info', 'console.debug', 'console.warn'] }
+      })
+    ],
+  } : {}
 
-        // Drop console statements
-           drop_console: true
-      },
-   })
-]
-: []
-
-const entry = {}
-fs
-  .readdirSync(path.resolve(__dirname, 'dist'))
-  .filter(e => e.split('.')[1] === 'html')
-  .map(i => {
-    const fileName = i.split('.')[0]
-    return {
-      [fileName]: `./src/${fileName}.js`
-    }
-  }).forEach(i => {
-    Object.assign(entry, i)
-  })
-
-const config = {
-  entry,
-  output: {
-    path: path.resolve(__dirname, 'dist/assets'),
-    filename: '[name].bundle.js',
-    publicPath: 'assets/'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(jpe?g|webp)$/,
-        use: "file-loader"
-      },
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+  const entry = {}
+  fs
+    .readdirSync(path.resolve(__dirname, 'dist'))
+    .filter(e => e.split('.')[1] === 'html')
+    .map(i => {
+      const fileName = i.split('.')[0]
+      return {
+        [fileName]: `./src/${fileName}.js`
       }
-    ]
-  },
-  plugins
-};
+    }).forEach(i => {
+      Object.assign(entry, i)
+    })
 
-module.exports = config;
+  const config = {
+    entry,
+    output: {
+      path: path.resolve(__dirname, 'dist/assets'),
+      filename: '[name].bundle.js',
+      publicPath: 'assets/'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.scss$/,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader'
+          ]
+        },
+        {
+          test: /\.png$/,
+          use: [
+            {
+              loader: 'url-loader',
+              options: {
+                mimetype: 'image/png'
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(jpe?g|webp)$/,
+          use: "file-loader"
+        },
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader',
+            'css-loader'
+          ]
+        }
+      ]
+    },
+    optimization
+  };
+
+  return config
+};

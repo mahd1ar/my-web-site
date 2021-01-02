@@ -7,7 +7,7 @@ const { exec } = require('child_process');
 function copyPublicToDist() {
   const dist = path.join(__dirname, 'dist'),
     src = path.join(__dirname, 'public')
-console.log(dist,src)
+
   fs.rmdirSync(path.join(__dirname, 'dist'), { recursive: true })
   fs.mkdirSync(path.join(__dirname, 'dist'))
   exec(`cp -r ${src}/* ${dist}/`, (err, stdout, stderr) => {
@@ -37,7 +37,7 @@ module.exports = env => {
 
   const entry = {}
   fs
-    .readdirSync(path.resolve(__dirname, 'dist'))
+    .readdirSync(path.resolve(__dirname, 'public'))
     .filter(e => e.split('.')[1] === 'html')
     .map(i => {
       const fileName = i.split('.')[0]

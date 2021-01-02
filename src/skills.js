@@ -1,6 +1,7 @@
 import 'bootstrap-4-grid/css/grid.min.css';
 import "./css/skills.scss";
 import anime from 'animejs/lib/anime.es.js';
+import { timeout } from './components/helper';
 
 let { default: rocket } = require('./giphy/rocket.webp')
 
@@ -78,6 +79,7 @@ setInterval(() => {
 
 window.onload = async () => {
 
+    await timeout(2000)
     anime({
         targets: '.progress-item',
         width: (el, i) => el.dataset.progress + '%',
@@ -92,16 +94,16 @@ window.onload = async () => {
                 perscent: '0%'
             };
 
-            anime({
-                targets: datap,
-                perscent: i.previousElementSibling.children[0].dataset.progress + '%',
-                round: 1,
-                easing: 'linear',
-                delay: index * 400 - 100,
-                update: function () {
-                    i.innerHTML = datap.perscent;
-                }
-            });
+    
+    anime({
+        targets: datap,
+        perscent: i.previousElementSibling.children[0].dataset.progress + '%',
+        round: 1,
+        easing: 'linear',
+        update: function () {
+            i.innerHTML = datap.perscent;
+        }
+    });
 
         })
 

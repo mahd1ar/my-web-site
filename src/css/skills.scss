@@ -38,15 +38,16 @@ body {
             margin-top: 22px;
             justify-content: center;
         }
-        @include small(){
+
+        @include small() {
             margin-top: 0;
         }
     }
 
     &-main-container {
-    @include small(){
-        transform: translateY(-20px);
-    }
+        @include small() {
+            transform: translateY(-20px);
+        }
     }
 }
 
@@ -86,6 +87,14 @@ h1 {
         margin-left: 1.6rem;
         border: 2px solid lighten($color: $cyan, $amount: 70);
 
+        @include desktop(){
+            height: 40px;
+        }
+
+        @include medium(){
+            height: unset;
+        }
+
         @include small() {
             width: 140px;
             margin: 0;
@@ -116,6 +125,10 @@ h1 {
     &-percent {
         margin-left: 12px;
 
+        @include desktop(){
+            width: 22px;
+        }
+
         @include small() {
             width: 30px;
             margin-left: 5px;
@@ -127,6 +140,7 @@ h1 {
 .skill-items-title {
     width: 250px;
     overflow: hidden;
+
     span {
         display: inline-block;
         height: 100%;
@@ -137,7 +151,8 @@ h1 {
             overflow: hidden;
             padding: 4px 16px;
         }
-        @include small(){
+
+        @include small() {
             background-color: unset;
             // font-size: 10px;
         }

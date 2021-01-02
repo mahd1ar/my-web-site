@@ -31,29 +31,29 @@ body {
     cursor: url('../img/mouse.png'), auto;
 
     // debug
-    @include superwidescreen() {
-        @include debug(superwidescreen);
-    }
+    // @include superwidescreen() {
+    //     @include debug(superwidescreen);
+    // }
 
-    @include widescreen() {
-        @include debug(widescreen);
-    }
+    // @include widescreen() {
+    //     @include debug(widescreen);
+    // }
 
-    @include desktop() {
-        @include debug(desktop);
-    }
+    // @include desktop() {
+    //     @include debug(desktop);
+    // }
 
-    @include tablet() {
-        @include debug(tablet);
-    }
+    // @include tablet() {
+    //     @include debug(tablet);
+    // }
 
-    @include medium() {
-        @include debug(medium);
-    }
+    // @include medium() {
+    //     @include debug(medium);
+    // }
 
-    @include small() {
-        @include debug(small);
-    }
+    // @include small() {
+    //     @include debug(small);
+    // }
 }
 
 html {

@@ -1,5 +1,6 @@
 import 'bootstrap-4-grid/css/grid.min.css';
 import "./css/education.scss";
+import { loaded } from './components/helper';
 
 const h1 = import('./img/frame/1.png');
 const h2 = import('./img/frame/2.png');
@@ -122,5 +123,5 @@ window.onload = async () => {
     };
     grained("#sec", options);
 
-
+    loaded()
 };

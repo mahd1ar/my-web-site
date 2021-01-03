@@ -2,6 +2,7 @@ import 'bootstrap-4-grid/css/grid.min.css';
 import "./css/contact.scss";
 import { Rquest } from './components/request';
 import anime from 'animejs/lib/anime.es.js';
+import { loaded } from './components/helper';
 
 ['github', 'linkedin', 'twitter', 'telegram','gmail'].forEach((sn) => {
     import(`./logos/${sn}.png`).then(i => {
@@ -91,6 +92,8 @@ window.onload = async () => {
         "grainHeight": 1
     }
     grained("#sec", options);
+
+    loaded()
 
     const r = new Rquest({blank: true})
 

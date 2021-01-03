@@ -183,3 +183,9 @@ li {
         justify-content: space-between;
     }
 }
+
+b{
+    @include tablet(){
+        display: none;
+    }
+}

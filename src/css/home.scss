@@ -166,7 +166,7 @@ body {
     span {
         position: relative;
         margin-right: 12px;
-        font-size: 2rem !important;
+        font-size: 42px !important;
         margin-bottom: 16px;
 
         @include small() {
@@ -179,7 +179,8 @@ body {
         }
 
         h3 {
-            font-size: 2.2rem !important;
+            // font-size: 2.2rem !important;
+            font-size: inherit !important;
             font-weight: bold;
             top: 0;
             left: 0;

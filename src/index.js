@@ -26,7 +26,7 @@ async function initScrambler() {
     const webdev = document.querySelector('#webdev h3')
     const scrambler = new Scrambler();
     const whatIDo = [
-        { w: 560, str: 'Linux System Adminstrator', color: colorPallet.green },
+        { w: 560, str: 'Linux System Admin', color: colorPallet.green },
         { w: 500, str: 'Network manager', color: colorPallet.cyan },
         { w: 480, str: 'web developer', color: colorPallet.pink },
     ]
@@ -37,7 +37,33 @@ async function initScrambler() {
         scrambler.scramble(item['str'], (text) => {
             webdev.innerText = text;
         });
-        scrambler.specialCharacters = item.str.split('')
+        scrambler.specialCharacters = item.str.split('').map(e => {
+            switch (e) {
+                case 'o':
+                    return '0'
+                case 'i':
+                    return '1'
+                case 'z':
+                    return '2'
+                case 'e':
+                    return '3'
+                case 'a':
+                    return '4'
+                case 's':
+                    return '5'
+                case 'v':
+                    return '7'
+                case 'b':
+                    return '8'
+                case 'q':
+                    return '9'
+                case 'g':
+                    return '9'
+                default:
+                    return e
+            }
+        }).sort(() => Math.random() - Math.random())
+
         setTimeout(() => {
             const { color } = item
             webdev.style.color = color
@@ -141,6 +167,6 @@ window.draw = function () {
 Promise.all(promises).then(() => {
     console.log('after promise all')
     main()
-    new Rquest({blank:false})
-    
+    new Rquest({ blank: false })
+
 })

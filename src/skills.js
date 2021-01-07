@@ -66,7 +66,7 @@ class Box {
 
     reset() {
         this.boxs.length = 0;
-        this.placeholder.innerHTML = '';
+        this.placeholder.innerHTML = "";
     }
 }
 

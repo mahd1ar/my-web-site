@@ -28,7 +28,7 @@ async function initScrambler() {
     const whatIDo = [
         { w: 560, str: 'Linux System Admin', color: colorPallet.green },
         { w: 500, str: 'Network manager', color: colorPallet.cyan },
-        { w: 480, str: 'web developer', color: colorPallet.pink },
+        { w: 480, str: 'web developer', color: colorPallet.blue },
     ]
 
     let conter = 0

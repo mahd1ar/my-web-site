@@ -1,0 +1,64 @@
+@import 'components/fonts';
+@import 'components/transition';
+
+.c-effect-crt {
+    font-family: Nintendoid1;
+    color: #eee;
+    line-height: 1;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes textflicker {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+.giltch-box {
+    position: fixed;
+    background-color: #111;
+    border-radius: 0px;
+    transition: all 50ms ease-in-out;
+    background-color: #595959;
+    box-shadow: 1px 1px 0 #555658;
+}
+
+#main::before {
+    pointer-events: none;
+}
+
+h1 {
+    font-family: Nintendoid1;
+    text-shadow: 3px 3px 0 #dedede;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    background-color: #111;
+    user-select: none !important;
+    cursor: url('~/assets/imgs/mouse.png'), auto;
+}
+
+* {
+    user-select: none !important;
+}
+
+a {
+    user-select: none !important;
+
+    cursor: url('~/assets/imgs/pointer.png'), auto !important;
+
+    * {
+        cursor: url('~/assets/imgs/pointer.png'), auto !important;
+    }
+}

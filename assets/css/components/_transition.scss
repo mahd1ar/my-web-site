@@ -1,0 +1,102 @@
+// transitions
+
+// .transition-rainbow {
+//     &-enter-active,
+//     &-leave-active {
+//         transition: all 0.5s ease;
+//         clip-path: circle(140.2% at 1% 99%);
+//         opacity: 1;
+//     }
+//     &-enter-from {
+//         overflow: hidden;
+//         clip-path: circle(2.8% at 1% 99%);
+//         opacity: 0;
+//     }
+
+//     &-leave-to {
+//         overflow: hidden;
+//         clip-path: circle(2.8% at 99% 1%);
+//         opacity: 0.5;
+//     }
+// }
+.transition-rainbow {
+    &-enter-active,
+    &-leave-active {
+        // transition: all 0.5s ease;
+        clip-path: circle(140.2% at 1% 99%);
+        opacity: 1;
+        transition-duration: 0.8s;
+    }
+    &-enter-from {
+        overflow: hidden;
+        // clip-path: circle(2.8% at 1% 99%);
+        opacity: 0;
+    }
+
+    &-leave-to {
+        animation: flickerI 0.8s linear reverse infinite;
+        overflow: hidden;
+        // clip-path: circle(2.8% at 99% 1%);
+        opacity: 0;
+    }
+}
+
+@keyframes flickerI {
+    0% {
+        opacity: 0.4;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    15% {
+        opacity: 0.85;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    30% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0.1;
+    }
+    40% {
+        opacity: 0.25;
+    }
+    45% {
+        opacity: 0.5;
+    }
+    60% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.85;
+    }
+    80% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.scale {
+    &-enter-active,
+    &-leave-active {
+        transition: all 0.5s ease;
+        transform: scale(1);
+        opacity: 1;
+    }
+    &-enter,
+    &-leave-active {
+        overflow: hidden;
+        transform: scale(0);
+        opacity: 0;
+    }
+}

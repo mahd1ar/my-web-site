@@ -1,0 +1,29 @@
+{
+  "name": "netdom.ir",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "^0.5.5",
+    "@types/animejs": "^3.1.7",
+    "@types/node": "^20.2.5",
+    "@types/p5": "^1.6.2",
+    "@vueuse/nuxt": "^10.2.1",
+    "nuxt": "^3.6.3",
+    "sass": "^1.62.1"
+  },
+  "dependencies": {
+    "@nuxtjs/device": "^3.1.0",
+    "@nuxtjs/tailwindcss": "^6.7.0",
+    "@pinia/nuxt": "^0.4.11",
+    "@splidejs/vue-splide": "^0.6.12",
+    "animejs": "^3.2.1",
+    "p5": "^1.6.0",
+    "pinia": "^2.1.3"
+  }
+}

@@ -1,4 +1,4 @@
-export const useDanceState = definePiniaStore('DanceState', {
+export const useDanceState = defineStore('DanceState', {
     state: () => ({
         _musicState: 'stoped' as 'play' | 'pause' | 'stoped',
         _isMusicLoaded: false,
@@ -6,12 +6,10 @@ export const useDanceState = definePiniaStore('DanceState', {
     }),
     actions: {
         setDiscobalIsLoaded() {
-            console.log(8888);
             this._isDiscoBallLoaded = true;
         },
 
         setMusicIsloaded() {
-            console.log(9999);
             this._isMusicLoaded = true;
         },
 

@@ -13,6 +13,9 @@ module.exports = {
         press: [
           'Press Start 2P', 'cursive'
         ],
+        archivo: [
+           'Archivo Black', 'sans-serif'
+        ],
       }
     },
   },

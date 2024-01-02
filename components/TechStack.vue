@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { PropType } from 'nuxt/dist/app/compat/capi'
 
 export type Logo =
   | 'tailwind'

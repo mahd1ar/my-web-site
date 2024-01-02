@@ -1,22 +1,14 @@
 <script lang="ts" setup>
 const danceState = useDanceState()
 
-const colors = reactive(['#0fc0fc', '#7b1daf', '#ff2fb9', '#d4ff47', '#1b3649'])
+// const colors = reactive(['#0fc0fc', '#7b1daf', '#ff2fb9', '#d4ff47', '#1b3649'])
 const counter = ref(0)
 
-const loop = () => {
-  if (counter.value === colors.length - 1) counter.value = 0
-  else counter.value++
-
-  setTimeout(() => {
-    danceState.getMusicState === 'play' && loop()
-  }, 1000)
-}
 const sunIsLoaded = ref(false)
 
-// onMounted(() => {
-//   loop()
-// })
+useIntervalFn(() => {
+  counter.value = (counter.value + 1) % 6
+},  5000)
 </script>
 
 <template>
@@ -30,9 +22,13 @@ const sunIsLoaded = ref(false)
       <img
         @load="sunIsLoaded = true"
         src="/pngwing.com.png"
-        class="animate-spin relative"
-        style=" animation-duration:10000ms ;"
+        class="animate-spin relative transition-all"
+        style=" animation-duration:10000ms;"
         alt=""
+        :style="{
+          filter: `hue-rotate(${counter *  60}deg)`,
+          transitionDuration: '5000ms',
+        }"
       />
     </div>
     <!-- <div

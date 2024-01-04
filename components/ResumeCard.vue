@@ -2,6 +2,7 @@
 import { type TechStachPropType } from '../components/TechStack.vue'
 
 defineProps({
+  avatar: String,
   heroImage: String,
   title: String,
   jobTitle: String,
@@ -11,8 +12,9 @@ defineProps({
 </script>
 
 <template>
-  <div class="mt-10 flex flex-col justify-center items-center gap-4 ">
-    <img :src="'/resume/nikan-alumni/' + heroImage" alt="" class="max-w-sm" />
+  <li class="mt-10 flex flex-col justify-center items-center gap-4 ">
+    <img class="w-48" :src="avatar" alt="">
+    <img :src="'/resume/resume_card_pics/' + heroImage" alt="" class="max-w-sm" />
     <div class="p-4" >
       <h3 class="uppercase font-bold text-4xl">{{ title }}</h3>
       <ul>
@@ -95,7 +97,7 @@ defineProps({
         </li>
       </ul>
     </div>
-  </div>
+  </li>
 </template>
 
 <style scoped>

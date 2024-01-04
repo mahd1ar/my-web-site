@@ -22,6 +22,7 @@
     "@nuxtjs/tailwindcss": "^6.10.1",
     "@pinia/nuxt": "^0.5.1",
     "@splidejs/vue-splide": "^0.6.12",
+    "@vueuse/components": "^10.7.1",
     "animejs": "^3.2.1",
     "lottie-web-vue": "^2.0.7",
     "p5": "^1.6.0",

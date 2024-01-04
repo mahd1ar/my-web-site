@@ -1,28 +1,31 @@
 <script lang="ts" setup>
-
-import { type TechStachPropType } from '../components/TechStack.vue'
+import { UseElementVisibility } from '@vueuse/components'
 import { LottieAnimation } from "lottie-web-vue"
-import WatermelonJSON from "../public/lottie/animation_lkijkh54.json"
+import WatermelonJSON from "../public/lottie/Animation - 1704279204978.json"
+import { type TechStachPropType } from '../components/TechStack.vue'
 
 const resume: {
-  heroImage: string,
+  avatar: string,
   title: string,
+  heroImage: string,
   jobTitle: string,
   jobDescription: string,
   techStack: TechStachPropType
 }[] = [
     {
-      title: 'nikan-alumni website',
-      heroImage: 'hero.jpg',
-      jobTitle: 'fullstack web dev',
+      avatar: '/gifs/resume/ZXC0PxDlsO9Vv29iy4.webp',
+      title: 'nikpeyvand co',
+      heroImage: 'nikpeyvand.png',
+      jobTitle: 'lead developer / IT manager',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
         'nginx',
         'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
       ]
-
+      
     },
     {
+      avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',
       title: 'nikan-alumni website',
       heroImage: 'hero.jpg',
       jobTitle: 'fullstack web dev',
@@ -31,9 +34,31 @@ const resume: {
         'nginx',
         'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
       ]
-
+    },
+    {
+      avatar: '/gifs/resume/4PMPdM08TcBjRl1ukU.webp',
+      title: 'zistdialogue website',
+      heroImage: 'zistdialogue.png',
+      jobTitle: 'fullstack web dev',
+      jobDescription: 'see screenshot on my Google Drive folder',
+      techStack: [
+        'nginx',
+        'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
+      ]
+    },
+    {
+      avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
+      title: 'bisansair website',
+      heroImage: 'bisansair.png',
+      jobTitle: 'fullstack web dev',
+      jobDescription: 'see screenshot on my Google Drive folder',
+      techStack: [
+        'nginx',
+        'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
+      ]
     },
   ]
+
 
 
 </script>
@@ -59,14 +84,6 @@ const resume: {
     <ResumeBigPlayButton class="my-28" /> -->
     <CassetteTape />
 
-    <!-- <LottieAnimation
-      :animation-data="WatermelonJSON"
-      :auto-play="true"
-      :loop="true"
-      :speed="2"
-      ref="anim"
-    /> -->
-
     <!-- scroll down -->
     <div class="mt-4 w-16 p-1 bg-black animate-bounce text-white ">
       <svg viewBox="0 0 24 24">
@@ -75,28 +92,36 @@ const resume: {
       </svg>
     </div>
     <underConstruction />
-    <div class="flex relative flex-wrap items-baseline">
-      <img class="w-48"
-        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMThvaWFxMWptYmFqa2UxNnAxdzF2MzYzdWR3ZGhhNWl6Y2h1N3FoaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TF6ZSOZWtXVBOeMIc6/giphy.gif"
-        alt="" />
-      <img class="w-48"
-        src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzZ5ZGVjZDJiN2c5NDdzYmJtNzFneXBwc3Vod2NsZHI3emZsMGZ1bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4PMPdM08TcBjRl1ukU/giphy.gif"
-        alt="" />
-      <!-- <img
-        class="w-48"
-        src="https://media.giphy.com/media/13i9ZtOyDp7UK4/giphy.gif"
-      /> -->
-      <img class="w-48" src="https://media.giphy.com/media/ZXC0PxDlsO9Vv29iy4/giphy.gif" />
-      <img class="w-48" src="https://media.giphy.com/media/0cM4V36f68NqYrravk/giphy.gif" />
-      <img class="w-48" src="https://media.giphy.com/media/qhiusSnQzQVZsoF9Tj/giphy.gif" />
-      <img class="w-48" src="https://media.giphy.com/media/QzD2McTKDsvQlS6aUd/giphy.gif" />
-    </div>
+    
+    
     <div class="container mx-auto relative">
-      <div v-for="(i, index) in resume" :key="index">
-        <ResumeCard :title="i.title" :heroImage="i.heroImage" :jobDescription="i.jobDescription" :jobTitle="i.jobTitle"
-          :techStack="i.techStack" />
+      <ul v-for="(i, index) in resume" :key="index">
+        <ResumeCard :avatar="i.avatar" :title="i.title" :heroImage="i.heroImage" :jobDescription="i.jobDescription"
+          :jobTitle="i.jobTitle" :techStack="i.techStack" />
+      </ul>
+
+      <div class=" my-10 flex items-center justify-center">
+
+        <UseElementVisibility v-slot="{ isVisible }">
+          <!-- <i class="fixed z-40 bg-black top-0" >{{ {isVisible} }}</i>  -->
+          <div :class="!isVisible && 'h-36'">
+
+            <LottieAnimation v-if="isVisible" :animation-data="WatermelonJSON" :auto-play="true" :loop="true" :speed="1"
+              class="relative" ref="anim" />
+          </div>
+        </UseElementVisibility>
+        <a href=""
+          class="text-lg flex gap-1 items-center bg-gradient-to-r from-pink-600 to-purple-500 text-white p-3 px-4 rounded-lg capitalize absolute mt-10">
+          download full resume
+          <svg class="w-7" viewBox="0 0 48 48">
+            <path fill="currentColor"
+              d="M17.457 31.51a2.673 2.673 0 0 0 3.08.008c.404-.288.722-.682.916-1.139l1.236-3.769a6.159 6.159 0 0 1 3.9-3.9l3.631-1.183a2.67 2.67 0 0 0 0-5.036l-3.7-1.193a6.176 6.176 0 0 1-3.895-3.888l-1.179-3.629a2.663 2.663 0 0 0-.976-1.291a2.713 2.713 0 0 0-3.085 0a2.68 2.68 0 0 0-.987 1.32l-1.193 3.667a6.166 6.166 0 0 1-3.796 3.818l-3.627 1.178a2.67 2.67 0 0 0 .03 5.047l3.587 1.165a6.185 6.185 0 0 1 3.902 3.91l1.18 3.623c.183.521.524.973.975 1.292m1.704-2.122l-.062.081a.179.179 0 0 1-.199-.006a.195.195 0 0 1-.052-.052l-1.17-3.6a8.608 8.608 0 0 0-2.092-3.401a8.704 8.704 0 0 0-3.405-2.1l-3.569-1.154a.185.185 0 0 1-.083-.064a.164.164 0 0 1-.03-.1a.18.18 0 0 1 .032-.1a.22.22 0 0 1 .052-.051l3.62-1.175a8.7 8.7 0 0 0 3.344-2.109a8.725 8.725 0 0 0 2.027-3.28l1.188-3.661a.17.17 0 0 1 .163-.114a.179.179 0 0 1 .153.085l1.172 3.6a8.692 8.692 0 0 0 2.093 3.385a8.716 8.716 0 0 0 3.4 2.1l3.6 1.168l.066.019a.169.169 0 0 1 .09.151c0 .036-.01.07-.03.1a.286.286 0 0 1-.049.05l-3.61 1.171a8.653 8.653 0 0 0-5.489 5.49zm13.714 11.254a1.95 1.95 0 0 0 1.124.359l.005.003a1.946 1.946 0 0 0 1.844-1.328l.569-1.75a2.382 2.382 0 0 1 1.499-1.502l1.79-.582a1.946 1.946 0 0 0 .94-2.958a1.961 1.961 0 0 0-1.005-.73l-1.757-.569a2.375 2.375 0 0 1-1.5-1.5l-.582-1.789a1.944 1.944 0 0 0-3.679.03l-.572 1.757a2.377 2.377 0 0 1-1.46 1.495l-1.79.582a1.943 1.943 0 0 0 .029 3.677l1.752.57a2.368 2.368 0 0 1 1.5 1.506l.582 1.788c.134.38.382.709.71.941M30.86 34.04l-.118-.039l.14-.049a4.877 4.877 0 0 0 3.043-3.091l.04-.121l.04.128a4.87 4.87 0 0 0 3.092 3.089l.156.05l-.121.04a4.871 4.871 0 0 0-3.093 3.095l-.04.121l-.04-.123a4.872 4.872 0 0 0-3.1-3.1" />
+          </svg>
+        </a>
       </div>
+
     </div>
+
     <RetroPalm />
     <div class="h-28 flex justify-center items-center ">gap</div>
   </div>

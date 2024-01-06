@@ -2,6 +2,7 @@
 import { type TechStachPropType } from '../components/TechStack.vue'
 
 defineProps({
+  index: Number,
   avatar: String,
   heroImage: String,
   title: String,
@@ -14,14 +15,20 @@ defineProps({
 <template>
   <li class="mt-10 flex flex-col justify-center items-center gap-4 ">
     <img class="w-48" :src="avatar" alt="">
+    <h3 class="uppercase font-bold text-4xl md:hidden">
+     <span class="text-cyan-300 text-3xl" >{{ index }}.</span>  
+      {{ title }}
+    </h3>
     <img :src="'/resume/resume_card_pics/' + heroImage" alt="" class="max-w-sm" />
     <div class="p-4" >
-      <h3 class="uppercase font-bold text-4xl">{{ title }}</h3>
+      <h3 class="uppercase font-bold text-4xl hidden md:block">
+        <span class="text-cyan-300 text-3xl" >{{ index }}.</span>  
+        {{ title }}</h3>
       <ul>
         <li
-          class="font-mono mt-4 text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center"
+          class="font-mono mt-4 text-based sm:text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center"
         >
-        <div class="flex items-center gap-1" >
+        <div class="flex items-center gap-1 flex-shrink-0" >
 
           <svg
             class="  text-cyan-400"
@@ -35,8 +42,9 @@ defineProps({
               d="M3 3h2v18H3V3zm16 0H5v2h14v14H5v2h16V3h-2zm-8 6h2V7h-2v2zm2 8h-2v-6h2v6z"
             />
           </svg>
-          <span class="text-cyan-300"> [ {{ jobTitle }} ] </span>
+          <span class="text-cyan-300"> [ job title ] </span>
         </div>
+        {{ jobTitle }}
           i design and program this web site
         </li>
 

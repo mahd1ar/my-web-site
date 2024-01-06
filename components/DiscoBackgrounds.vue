@@ -12,12 +12,16 @@ useIntervalFn(() => {
 </script>
 
 <template>
-  <div id="sun" class="fixed inset-0  ">
+  <div id="sun" class="fixed inset-0 flex justify-center overflow-hidden  ">
     <div
       id="sun__container"
       class="relative transition-all  "
       v-if="danceState.getMusicState === 'play'"
-      :class="[sunIsLoaded ? 'ready' : 'not_ready']"
+      >
+      <!-- :class="[sunIsLoaded ? 'ready' : 'not_ready']" -->
+    <div 
+    id="img_box"
+    
     >
       <img
         @load="sunIsLoaded = true"
@@ -31,24 +35,7 @@ useIntervalFn(() => {
         }"
       />
     </div>
-    <!-- <div
-      v-for="(color, index) in colors"
-      v-show="index === counter"
-      :key="index"
-      :style="{ backgroundColor: color }"
-      class="w-full h-full absolute"
-    >
-      <div class="flex w-full flex-wrap ">
-        <span
-          class="w-5 h-5 bg-white border-black border "
-          v-for="i in 1000"
-          :key="i"
-          :style="{
-            opacity: Math.random()
-          }"
-        ></span>
-      </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -61,13 +48,15 @@ useIntervalFn(() => {
 }
 
 #sun {
-  @apply h-full w-full flex justify-center overflow-hidden;
+  @apply  h-full w-full flex justify-center   overflow-hidden pointer-events-none opacity-80 ;
 }
 
 #sun__container {
-  @apply lg:w-[1000px] lg:h-[1000px] -translate-y-1/2 duration-[2000ms] ease-out;
+  @apply flex-shrink-0 w-[500px] h-[500px] sm:w-[1000px] sm:h-[1000px] duration-[2000ms] ease-out ;
 }
-img {
-  @apply top-20;
+
+#img_box{
+  transform: translateY( calc(-50% + 80px ) );
 }
+
 </style>

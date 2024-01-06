@@ -154,13 +154,13 @@ const percentage = computed({
         </div>
       </button>
       <div class="w-full" >
-        <div  class="flex items-center gap-2 px-4 w-full flex-wrap" >
+        <div  class="flex items-center gap-2 px-4 w-full flex-nowrap" >
           <svg class="flex-shrink-0 text-pink-300" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 4h12v16h-8v-8h6V8h-8v12H2v-8h6zm0 10H4v4h4zm10 0h-4v4h4z"/></svg>
-          <span class="text-2xl font-mono">Blue (Da Ba Dee)  </span>
+          <span class="text-xl sm:text-2xl font-mono whitespace-nowrap">Blue (Da Ba Dee)  </span>
         </div>
-        <div  class="flex items-center gap-2 px-4 w-full flex-wrap" >
+        <div  class="flex items-center gap-2 px-4 w-full flex-nowrap" >
           <svg class="flex-shrink-0 text-pink-300" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M15 2H9v2H7v6h2V4h6zm0 8H9v2h6zm0-6h2v6h-2zM4 16h2v-2h12v2H6v4h12v-4h2v6H4z"/></svg>
-          <span class="text-xl font-mono">8 Bit Universe  </span>
+          <span class=" text-lg sm:text-xl font-mono">8 Bit Universe  </span>
         </div>
         <div class="h-16 w-full p-2 relative ">
           <div class="relative bg-black p-2 h-full" >

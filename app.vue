@@ -37,6 +37,7 @@ onBeforeMount(() => {
 
 <template>
   <div>
+    <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage
         ref="page"

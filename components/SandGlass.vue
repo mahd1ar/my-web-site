@@ -12,12 +12,14 @@
 #loading {
   background-color: #f67280;
 
-  @apply flex flex-col justify-center items-center fixed inset-0 z-50 w-screen h-screen;
+  @apply  flex flex-col justify-center items-center fixed inset-0 z-50 w-screen h-screen;
 
   p {
+    color:aliceblue;
     font-size: 30px;
     margin-top: 22px;
     text-shadow: 6px 4px #222;
+    letter-spacing: 8px;
   }
 }
 </style>

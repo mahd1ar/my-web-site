@@ -46,7 +46,7 @@ onMounted(() => {
     /> -->
 
     <div v-if="!appState.isLoaded" class="z-40">
-      <sand-glass v-if="$route.name === 'index'" />
+      <SandGlass v-if="$route.name === 'index'" />
       <loading text="trust the process" v-else />
     </div>
 

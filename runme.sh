@@ -22,4 +22,4 @@ yarn
 
 yarn build
 
-pm2 start "PORT=3001 node .output/server/index.mjs" --name netdom
+pm2 start "PORT=3022 node .output/server/index.mjs" --name netdom

@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    strategy:
+      matrix:
+        node: [18.x]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: stop pm2 service 
+        run: pm2 delete netdom || echo "no process" 
+
+      - name: Install dependencies 👨🏻‍💻
+        run: yarn
+
+      - name: Remove old files
+        run: rm -rf ./nuxt
+        
+      - name: build 🏦
+        run: yarn run build
+
+      - name: start server ✅
+        run: pm2 start "PORT=3022 node .output/server/index.mjs" --name netdom

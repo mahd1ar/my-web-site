@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useDanceState } from '~/store/DanceState';
+
 const danceState = useDanceState()
 
 // const colors = reactive(['#0fc0fc', '#7b1daf', '#ff2fb9', '#d4ff47', '#1b3649'])

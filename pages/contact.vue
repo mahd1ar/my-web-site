@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { timeout } from '~/libraries/helpers'
 import anime from 'animejs'
-import useNavigation from '@/mixin/navigation'
+import useNavigation from '~/composables/navigation';
+import { useAppState } from '~/store/appState';
 
 // head() {
 //   return {

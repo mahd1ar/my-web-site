@@ -1,5 +1,3 @@
-import { defineStore as definePiniaStore } from 'pinia';
-
 type BackBtnStyle = {
     background: string;
     border: string;
@@ -11,7 +9,7 @@ function isDesktop() {
     return window.innerWidth > 700;
 }
 
-export const useAppState = definePiniaStore('appState', {
+export const useAppState = defineStore('appState', {
     state: () => ({
         isLoaded: false,
         navigator: {

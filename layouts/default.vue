@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { useAppState } from '@/composables/appState'
-import { grained } from '~/libraries/grained'
+import { grained } from '~/libraries/grained';
+import { useAppState } from '~/store/appState';
 
 const appState = useAppState()
 const loadingIsDone = useState<boolean>('loadingIsDone')

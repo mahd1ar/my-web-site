@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { useAppState } from '~/composables/appState'
+import { useAppState } from '~/store/appState';
+
 
 const appState = useAppState()
 </script>

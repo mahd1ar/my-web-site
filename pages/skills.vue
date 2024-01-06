@@ -1,9 +1,7 @@
 <script lang="ts" setup>
-import { timeout } from '~/libraries/helpers'
 import anime from 'animejs'
-import { useAppState } from '~/composables/appState'
-import useBox from '@/mixin/BoxMixin'
-import useNavigation from '@/mixin/navigation'
+import useNavigation from '~/composables/navigation';
+import { useAppState } from '~/store/appState';
 
 const appState = useAppState()
 // useBox()

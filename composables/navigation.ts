@@ -1,5 +1,4 @@
-import { timeout } from '~/libraries/helpers';
-import { onMounted, onUnmounted } from 'vue';
+import { useAppState } from '~/store/appState';
 
 export default function useNavigation() {
     const appState = useAppState();

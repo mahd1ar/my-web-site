@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import { onBeforeMount } from 'vue'
+import { onBeforeMount } from 'vue';
+import { useAppState } from './store/appState';
 
 const appState = useAppState()
 const isMounted = ref(false)

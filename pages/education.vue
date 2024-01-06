@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-// import BoxMixin from '@/mixin/BoxMixin'
-import { timeout } from '~/libraries/helpers'
-import { useAppState } from '../composables/appState'
+import { useAppState } from '~/store/appState';
+
 
 const appState = useAppState()
 

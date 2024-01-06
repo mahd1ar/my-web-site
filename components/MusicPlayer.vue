@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useAppState } from '~/store/appState';
+
 const appData = useAppState()
 
 const openDialog = ref(true)

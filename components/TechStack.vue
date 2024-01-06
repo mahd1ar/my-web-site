@@ -13,7 +13,7 @@ export type Logo =
   | 'express'
   | 'graphql'
 
-export type TechStachPropType = { logo: Logo; label: string } | Logo[]
+export type TechStachPropType = ({ logo: Logo; label: string } | Logo)[]
 
 defineProps({
   items: {

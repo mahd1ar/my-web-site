@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useDanceState } from '~/store/DanceState';
+
 const danceState = useDanceState()
 const audioEl = ref<HTMLAudioElement | null>(null)
 const buttenIsPressedForTheFirstTime = ref(false)

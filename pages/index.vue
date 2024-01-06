@@ -1,6 +1,6 @@
 <script lang="ts" setup>
+import { useAppState } from '~/store/appState';
 import { Glitch } from '../libraries/glitch.js'
-import { BrowserD, timeout } from '../libraries/helpers.js'
 
 const appState = useAppState()
 
@@ -17,22 +17,13 @@ const navigation = ref([
   { name: 'resume', link: 'resume' }
 ])
 
-const webdev = ref<HTMLDivElement>() //this.$refs.webdev
-
-// definePageMeta({
-//   pageTransition: {
-//     name: 'transition-rainbow',
-//     mode: 'out-in'
-//   }
-// })
-
+const webdev = ref<HTMLDivElement>()
 let interval: [number, boolean] = [0, true]
 
 onMounted(() => {
   appState.hideBackBtn()
 
   interval = [0, true]
-  // this.initScrambler();
   initGlitch()
   typeThis()
 })
@@ -140,6 +131,33 @@ async function initGlitch () {
 
   new p5(sketch)
 }
+const title = 'mahdiyar anari\'s personal website'
+const description = 'Hi👋 i\'m mahdiyar and this is my personal website!! im a fullstack web developer and system admin '
+
+useSeoMeta({
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  // ogImage: '[og:image]',
+  // ogUrl: '[og:url]',
+  twitterTitle: title,
+  twitterDescription: description,
+  // twitterImage: '[twitter:image]',
+  twitterCard: 'summary'
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'en'
+  },
+  link: [
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png'
+    }
+  ]
+})
 </script>
 
 <template>

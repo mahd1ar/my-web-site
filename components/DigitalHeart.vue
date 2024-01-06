@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import anime from 'animejs'
-import { timeout } from '~/libraries/helpers'
 
 onMounted(() => {
   const tl = anime.timeline({

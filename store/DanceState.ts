@@ -1,7 +1,7 @@
 export const useDanceState = defineStore('DanceState', {
     state: () => ({
         _musicState: 'stoped' as 'play' | 'pause' | 'stoped',
-        _isMusicLoaded: true,
+        _isMusicLoaded: false,
         _isDiscoBallLoaded: false,
     }),
     actions: {

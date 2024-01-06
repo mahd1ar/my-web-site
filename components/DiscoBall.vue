@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { useDanceState } from '~/store/DanceState';
+
 const danseState = useDanceState()
 </script>
 

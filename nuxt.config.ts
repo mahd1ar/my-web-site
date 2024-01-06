@@ -42,11 +42,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt'
   ],
-//   pinia: {
-//     autoImports: [
-//       // automatically imports `defineStore`
-//       'defineStore', // import { defineStore } from 'pinia'
-//       ['defineStore', 'definePiniaStore'] // import { defineStore as definePiniaStore } from 'pinia'
-//     ]
-//   }
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
 })

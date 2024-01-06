@@ -1,24 +1,13 @@
 <script lang="ts" setup>
 const danseState = useDanceState()
-
-// const target = ref(null)
-// const targetIsVisible = ref(false)
-
-// const { stop } = useIntersectionObserver(
-//   target,
-//   ([{ isIntersecting }], observerElement) => {
-//     targetIsVisible.value = isIntersecting
-//   }
-// )
 </script>
 
 <template>
   <div class="w-40 overflow-hidden fixed top-0 z-10">
     <ClientOnly>
       <img
-        ref="target"
         @load="danseState.setDiscobalIsLoaded()"
-        src="https://media.giphy.com/media/wAMDg2ie2x7CQtFPcZ/giphy.gif"
+        src="/gifs/resume/wAMDg2ie2x7CQtFPcZ.webp"
         alt="discoball"
         class="w-full  transition-transform will-change-transform duration-1000 ease-out"
         :class="[

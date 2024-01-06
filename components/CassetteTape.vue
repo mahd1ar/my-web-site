@@ -144,7 +144,7 @@ const percentage = computed({
             " class="w-full h-full relative" viewBox="0 0 24 24">
             <path fill="currentColor" d="M10 20H8V4h2v2h2v3h2v2h2v2h-2v2h-2v3h-2v2z" />
           </svg>
-          <svg class="w-full h-full p-4 relative" v-else-if="danceState.getMusicState === 'halt'" viewBox="0 0 24 24">
+          <svg v-else-if="danceState.getMusicState === 'halt'" class="w-full h-full p-4 relative"  viewBox="0 0 24 24">
             <path fill="currentColor"
               d="M18 2H6v6h2v2h2v4H8v2H6v6h12v-6h-2v-2h-2v-4h2V8h2V2zm-2 6h-2v2h-4V8H8V4h8v4zm-2 6v2h2v4H8v-4h2v-2h4z" />
           </svg>

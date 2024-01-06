@@ -2,7 +2,6 @@
 // import BoxMixin from '@/mixin/BoxMixin'
 import { timeout } from '~/libraries/helpers'
 import { useAppState } from '../composables/appState'
-import { ref, onMounted } from 'vue'
 
 const appState = useAppState()
 
@@ -109,18 +108,18 @@ onMounted(async () => {
       alt=""
     />
 
-    <div class="container mx-auto">
+    <div class="container mx-auto relative">
       <div class="my-32">
         <div class="mb-2 flex justify-center">
-          <retro-header title="Education" />
+          <RetroHeader title="Education" />
         </div>
 
         <div class="text-white flex flex-col items-center font-chakra">
           <div class="mt-20 mb-6">
-            <neon-sign class="hidden" />
+            <NeonSign class="hidden" />
           </div>
 
-          <chevron-blink />
+          <ChevronBlink />
         </div>
       </div>
 

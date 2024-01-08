@@ -52,13 +52,6 @@ const socials = [
 
 const refrence = route.query.refrence || route.query.ref || ''
 
-const containerw = ref(0)
-
-// computed: {
-//   isLoading() {
-//     return this.$store.state.isLoaded
-//   },
-// },
 
 onMounted(async () => {
   await timeout(2000)
@@ -193,11 +186,14 @@ function downloadVcard () {
             >
               <i class="social-media__tag whitespace-normal">contact</i>
 
-              <img
-                class="social-media__icon"
-                alt="vcard-8bit-logo"
-                :src="'~/assets/imgs/logo/vcard.png'"
-              />
+              <a href="/vcard.vcf" download target="_blank"
+                class="w-24 h-24 p-2 "
+              >
+              <div class="text-cyan-500 bg-purple-800 p-1" > 
+
+                <svg  class="w-full h-full" viewBox="0 0 24 24"><path fill="currentColor" d="M2 3h22v11h-2V5H2v14h12v2H0V3zm8 4H6v4h4zm-6 6h8v4H4zm16-6h-6v2h6zm-6 4h6v2h-6zm3 4h-3v2h3zm4 6v3h-2v-3h-3v-2h3v-3h2v3h3v2z"/></svg>
+              </div>
+              </a>
             </span>
           </div>
         </div>

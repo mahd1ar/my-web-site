@@ -108,8 +108,8 @@ const resume: {
 
             <LottieAnimation v-if="isVisible" :animation-data="WatermelonJSON" :auto-play="true" :loop="true" :speed="1"
               class="relative" ref="anim" />
-          </div>
-        </UseElementVisibility>
+            </div>
+          </UseElementVisibility>
         <a href=""
           class="text-lg flex h-12 bg-gradient-to-r from-pink-600 to-purple-500 text-white rounded-lg capitalize absolute mt-10">
           <div class=" px-4 flex items-center gap-1" >
@@ -126,11 +126,11 @@ const resume: {
           </div>
         </a>
       </div>
-
+      
     </div>
 
-    <RetroPalm />
-    <div class="h-28 flex justify-center items-center "></div>
+
+    <RetroPalm class="my-44" />
   </div>
 </template>
 

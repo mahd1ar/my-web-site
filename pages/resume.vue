@@ -110,7 +110,7 @@ const resume: {
               class="relative" ref="anim" />
             </div>
           </UseElementVisibility>
-        <a href=""
+        <a href="/docs/mahdiyar anari.pdf" target="_blank"
           class="text-lg flex h-12 bg-gradient-to-r from-pink-600 to-purple-500 text-white rounded-lg capitalize absolute mt-10">
           <div class=" px-4 flex items-center gap-1" >
 

@@ -27,7 +27,7 @@ useIntervalFn(() => {
     >
       <img
         @load="sunIsLoaded = true"
-        src="/pngwing.com.png"
+        src="/pngwing.com.webp"
         class="animate-spin relative transition-all"
         style=" animation-duration:10000ms;"
         alt=""

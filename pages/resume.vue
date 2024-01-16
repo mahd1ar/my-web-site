@@ -15,7 +15,7 @@ const resume: {
     {
       avatar: '/gifs/resume/ZXC0PxDlsO9Vv29iy4.webp',
       title: 'nikpeyvand co',
-      heroImage: 'nikpeyvand.png',
+      heroImage: 'nikpeyvand.jpg',
       jobTitle: 'lead developer / IT manager',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
@@ -38,7 +38,7 @@ const resume: {
     {
       avatar: '/gifs/resume/4PMPdM08TcBjRl1ukU.webp',
       title: 'zistdialogue website',
-      heroImage: 'zistdialogue.png',
+      heroImage: 'zistdialogue.jpg',
       jobTitle: 'fullstack web dev',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
@@ -49,7 +49,7 @@ const resume: {
     {
       avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
       title: 'bisansair website',
-      heroImage: 'bisansair.png',
+      heroImage: 'bisansair.jpg',
       jobTitle: 'fullstack web dev',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
@@ -65,8 +65,8 @@ const resume: {
 
 <template>
   <div class="w-full text-gray-50 relative ">
-    <img class="hidden md:block absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-.png" />
-    <img class="md:hidden absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-mobile-2.png" />
+    <img class="hidden md:block absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-.webp" />
+    <img class="md:hidden absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-mobile-2.webp" />
     <!-- v-if="danceState.getMusicState === 'play'" -->
     <LazyDiscoBackgrounds />
     <DiscoBall class="" />

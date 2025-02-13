@@ -8,8 +8,9 @@ defineProps({
   title: String,
   description: String,
   jobTitle: String,
-  jobDescription: String,
-  techStack: Array as PropType<string[]>
+  href: String,
+  techStack: Array as PropType<string[]>,
+  more: String
 })
 
 defineEmits<{
@@ -20,7 +21,7 @@ defineEmits<{
 <template>
   <li class="mt-10 flex flex-col justify-center items-center gap-4 ">
     <img class="w-48" :src="avatar" alt="">
-    <h3 class="px-4 uppercase font-bold text-4xl md:hidden">
+    <h3 class="px-4 uppercase font-bold text-4xl md:hidden text-center">
       <span class="text-cyan-300 text-3xl">{{ index }}.</span>
       {{ title }}
     </h3>
@@ -31,7 +32,9 @@ defineEmits<{
         perPage: 1,
         pagination: false,
         arrows: false,
-        gap:'20px'
+        height: '290px',
+        gap:'20px',
+        autoHeight: true,
       }" aria-label="My Favorite Images" class="max-w-sm">
         <!-- @splide:moved="log" -->
         <SplideSlide v-for="(src, inx) in images?.map(i => '/resume/resume_card_pics/' + i) ||[]" :key="inx" class="w-full">
@@ -45,9 +48,23 @@ defineEmits<{
         <span class="text-cyan-300 text-3xl">{{ index }}.</span>
         {{ title }}
       </h3>
-      <div class="max-w-md pl-10 text-gray-200 ">
-        {{ description }}
+      <div class="max-w-md md:pl-10 text-gray-200" v-html="description" >
       </div>
+     
+       <button v-if="more" class="text-cyan-300" popovertarget="my-popover">more ...</button>
+       
+       <div ref="popoverel" v-if="more" class="max-w-[90vw] max-h-[90vh] p-0 border rounded backdrop:bg-black/75" popover id="my-popover"  >
+<div class="bg-cyan-500 text-gray-100 font-bold p-2 flex justify-between items-center"
+
+>More about this software
+
+<div @click="() => { $refs.popoverel.hidePopover()}" class="bg-black hover:bg-opacity-65 p-2 " >X</div>
+</div>
+<div class="p-4" v-html="more" ></div>
+        </div>
+         
+        
+      
       <ul>
         <li
           class="font-mono mt-4 text-based sm:text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center">
@@ -62,18 +79,16 @@ defineEmits<{
 
         </li>
 
-        <li class="font-mono mt-4 text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center">
+        <li v-if="href" class="font-mono mt-4 text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center">
           <div class="flex items-center gap-1">
 
-            <svg class="  text-cyan-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path fill="currentColor"
-                d="M2 2h20v16h-5v2h-2v-2H9v2H7v-2H2V2zm5 18v2H5v-2h2zm10 0v2h2v-2h-2zm3-16H4v12h16V4zm-8 4h2v2h-2V8zm-2 4v-2h2v2h-2zm0 0v2H8v-2h2zm6 0h-2v-2h2v2zm0 0h2v2h-2v-2zM8 6H6v2h2V6z" />
-            </svg>
+            <svg class=" text-cyan-400" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h7v2H4v8h7v2H2V6zm16 0h-7v2h7v8h-7v2h9V6zm-3 5H7v2h10z"/></svg>
+
             <span class="text-cyan-300 flex-shrink-0">
-              [ screenshots ]
+              [ link ]
             </span>
           </div>
-          <a href="#" class="underline font-bold underline-offset-2 ">{{ jobDescription }}
+          <a href="#" class="underline  font-bold underline-offset-2 ">{{ href }}
 
             <span class="  rounded-sm   inline-block">
               <svg class="w-5 " viewBox="0 0 24 24">

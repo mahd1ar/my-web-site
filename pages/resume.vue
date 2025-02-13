@@ -4,71 +4,143 @@ import { LottieAnimation } from "lottie-web-vue"
 import WatermelonJSON from "../public/lottie/Animation - 1704279204978.json"
 
 const resume = [
-    {
-      avatar: '/gifs/resume/ZXC0PxDlsO9Vv29iy4.webp',
-      title: 'nikpeyvand',
-      description: 'Nikpeyvand is a comprehensive application for the communication network of alumni centers, commissioned by the Nikan Cultural Institute.',
-      href: 'https://nikpeyvand.com/discover',
-      images: ['nikpeyvand.jpg',
+  {
+    avatar: '/gifs/resume/ZXC0PxDlsO9Vv29iy4.webp',
+    title: 'nikpeyvand',
+    description: 'Nikpeyvand is a comprehensive application for the communication network of alumni centers, commissioned by the Nikan Cultural Institute.',
+    href: 'https://nikpeyvand.com/discover',
+    images: ['nikpeyvand.jpg',
       'nikpeyvand-2.png',
       'nikpeyvand-3.png',
       'nikpeyvand-4.png',
       'nikpeyvand-5.png',
       'nikpeyvand-6.png',
     ],
-      jobTitle: 'lead developer / IT manager',
-      jobDescription: 'see screenshot on my Google Drive folder',
-      techStack: [
-        'nginx',
-        'ubuntu', 'tailwind_css', 'nuxt_js', 'node_js', 'typescript', 'prisma_js'
-      ]
-      
-    },
-    {
-      avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',
-      title: 'Saba Pishro Control panel',
-      images: ['hero.jpg'],
-      jobTitle: 'fullstack web dev',
-      jobDescription: 'see screenshot on my Google Drive folder',
-      techStack: [
-        'nginx',
-        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
-      ]
-    },
-    {
-      avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',
-      title: 'nikan-alumni website',
-      images: ['hero.jpg'],
-      jobTitle: 'fullstack web dev',
-      jobDescription: 'see screenshot on my Google Drive folder',
-      techStack: [
-        'nginx',
-        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
-      ]
-    },
-    {
-      avatar: '/gifs/resume/4PMPdM08TcBjRl1ukU.webp',
-      title: 'zistdialogue website',
-      images: ['zistdialogue.jpg'],
-      jobTitle: 'fullstack web dev',
-      jobDescription: 'see screenshot on my Google Drive folder',
-      techStack: [
-        'nginx',
-        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
-      ]
-    },
-    {
-      avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
-      title: 'bisansair website',
-      images: ['bisansair.jpg'],
-      jobTitle: 'fullstack web dev',
-      jobDescription: 'see screenshot on my Google Drive folder',
-      techStack: [
-        'nginx',
-        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
-      ]
-    },
-  ]
+    jobTitle: 'Lead developer / IT manager / Founder',
+    techStack: [
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'node_js', 'typescript', 'prisma_js'
+    ]
+
+  },
+  {
+    avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',
+    title: 'Saba Pishro Control panel',
+    description: `
+      Saba Pishro Project Control Application. <br />
+This application is designed to manage large construction projects and predict and estimate their costs.<br />
+`,
+    more: `
+      The features of this software include:<br />
+<ul class="list-disc">
+<li>
+Adding invoices 
+</li>
+<li>
+Adding sales invoices 
+</li>
+<li>
+Determining projects 
+</li>
+<li>
+Determining contracts 
+</li>
+<li>
+Determining contractors 
+</li>
+<li>
+Adding contracts 
+</li>
+<li>
+Ability to approve invoices 
+</li>
+<li>
+Accurate reporting of the project implementation process 
+</li>
+<li>
+Ability to add users with different roles 
+</li>
+<li>
+Reporting on user activity 
+</li>
+<li>
+Ability to send messages by leaving notes and tagging other users 
+</li>
+<li>
+Ability to send messages via Telegram bot
+</li>
+</ul>
+
+      `,
+    images: [
+      'saba-1.png',
+      'saba-2.jpg',
+      'saba-3.png',
+    ],
+    jobTitle: 'fullstack web dev',
+    href: '',
+    techStack: [
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+    ]
+  },
+  {
+    avatar: '/gifs/resume/QzD2McTKDsvQlS6aUd.webp',
+    title: 'carizan co',
+    images: [
+      'carizan.png',
+    ],
+    jobTitle: 'full stack developer of website',
+    href: 'https://carizanin.com/pich-gostar',
+    techStack: [
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+    ]
+  },
+  {
+    avatar: '/gifs/resume/cig.gif',
+    title: 'nikan-alumni website',
+    images: [
+      'nikan-1.jpg',
+      'nikan-2.png',
+      'nikan-3.png',
+      'nikan-4.png',
+    ],
+    jobTitle: 'designer and full stack developer of website',
+    href: 'https://nikan-alumni.com',
+    techStack: [
+      'figma',
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+    ]
+  },
+  {
+    avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
+    title: 'bisansair website',
+    images: [
+      'bisansair-2.png',
+      'bisansair-3.png'
+    ],
+    jobTitle: 'frontend developer',
+    href: 'https://bisanseir.com/',
+    techStack: [
+      'html', 'css', 'alpine_js',
+      'tailwind_css',
+    ]
+  },
+  {
+    avatar: '/gifs/resume/4PMPdM08TcBjRl1ukU.webp',
+    title: 'zistdialogue website',
+    images: ['zistdialogue.jpg'],
+    jobTitle: 'fullstack web dev',
+    href: 'see screenshot on my Google Drive folder',
+    techStack: [
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+    ]
+  },
+
+]
 
 
 const imageViewer = reactive({
@@ -77,29 +149,29 @@ const imageViewer = reactive({
   startFromIndex: 0
 })
 
-function openImageViewer (resumeItemIndex: number, startFromIndex: number) {
+function openImageViewer(resumeItemIndex: number, startFromIndex: number) {
 
-  imageViewer.images.splice(0,imageViewer.images.length)
-  
+  imageViewer.images.splice(0, imageViewer.images.length)
+
   resume.at(resumeItemIndex)?.images.forEach(i => {
     imageViewer.images.push(i)
   })
 
-  const [nthItem] = imageViewer.images.splice(startFromIndex,1)
-  
+  const [nthItem] = imageViewer.images.splice(startFromIndex, 1)
+
   imageViewer.images.unshift(nthItem)
-  
+
   imageViewer.isOpen = true
 }
 
 </script>
 
 <template>
- 
+
   <div class="w-full text-gray-50 relative ">
 
-     <ImageViewer v-model:is-open="imageViewer.isOpen" 
-  :images="imageViewer.images.map(i => '/resume/resume_card_pics/' + i)" />
+    <ImageViewer v-model:is-open="imageViewer.isOpen"
+      :images="imageViewer.images.map(i => '/resume/resume_card_pics/' + i)" />
     <img class="hidden md:block absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-.webp" />
     <img class="md:hidden absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-mobile-2.webp" />
     <!-- v-if="danceState.getMusicState === 'play'" -->
@@ -127,11 +199,11 @@ function openImageViewer (resumeItemIndex: number, startFromIndex: number) {
       </svg>
     </div>
     <underConstruction />
-    
-    
+
+
     <div class="container mx-auto relative">
       <ul v-for="(i, index) in resume" :key="index">
-        <ResumeCard @selected="inx => { openImageViewer(index,inx) }" v-bind="i" :index="index + 1" />
+        <ResumeCard @selected="inx => { openImageViewer(index, inx) }" v-bind="i" :index="index + 1" />
       </ul>
 
       <div class=" my-10 flex items-center justify-center">
@@ -142,25 +214,28 @@ function openImageViewer (resumeItemIndex: number, startFromIndex: number) {
 
             <LottieAnimation v-if="isVisible" :animation-data="WatermelonJSON" :auto-play="true" :loop="true" :speed="1"
               class="relative" ref="anim" />
-            </div>
-          </UseElementVisibility>
+          </div>
+        </UseElementVisibility>
         <a href="https://www.cake.me/mahdiyar-anari" target="_blank"
           class="text-lg flex h-12 bg-gradient-to-r from-pink-600 to-purple-500 text-white rounded-lg capitalize absolute mt-10">
-          <div class=" px-4 flex items-center gap-1" >
+          <div class=" px-4 flex items-center gap-1">
 
             <svg class="w-7 " viewBox="0 0 48 48">
               <path fill="currentColor"
-              d="M17.457 31.51a2.673 2.673 0 0 0 3.08.008c.404-.288.722-.682.916-1.139l1.236-3.769a6.159 6.159 0 0 1 3.9-3.9l3.631-1.183a2.67 2.67 0 0 0 0-5.036l-3.7-1.193a6.176 6.176 0 0 1-3.895-3.888l-1.179-3.629a2.663 2.663 0 0 0-.976-1.291a2.713 2.713 0 0 0-3.085 0a2.68 2.68 0 0 0-.987 1.32l-1.193 3.667a6.166 6.166 0 0 1-3.796 3.818l-3.627 1.178a2.67 2.67 0 0 0 .03 5.047l3.587 1.165a6.185 6.185 0 0 1 3.902 3.91l1.18 3.623c.183.521.524.973.975 1.292m1.704-2.122l-.062.081a.179.179 0 0 1-.199-.006a.195.195 0 0 1-.052-.052l-1.17-3.6a8.608 8.608 0 0 0-2.092-3.401a8.704 8.704 0 0 0-3.405-2.1l-3.569-1.154a.185.185 0 0 1-.083-.064a.164.164 0 0 1-.03-.1a.18.18 0 0 1 .032-.1a.22.22 0 0 1 .052-.051l3.62-1.175a8.7 8.7 0 0 0 3.344-2.109a8.725 8.725 0 0 0 2.027-3.28l1.188-3.661a.17.17 0 0 1 .163-.114a.179.179 0 0 1 .153.085l1.172 3.6a8.692 8.692 0 0 0 2.093 3.385a8.716 8.716 0 0 0 3.4 2.1l3.6 1.168l.066.019a.169.169 0 0 1 .09.151c0 .036-.01.07-.03.1a.286.286 0 0 1-.049.05l-3.61 1.171a8.653 8.653 0 0 0-5.489 5.49zm13.714 11.254a1.95 1.95 0 0 0 1.124.359l.005.003a1.946 1.946 0 0 0 1.844-1.328l.569-1.75a2.382 2.382 0 0 1 1.499-1.502l1.79-.582a1.946 1.946 0 0 0 .94-2.958a1.961 1.961 0 0 0-1.005-.73l-1.757-.569a2.375 2.375 0 0 1-1.5-1.5l-.582-1.789a1.944 1.944 0 0 0-3.679.03l-.572 1.757a2.377 2.377 0 0 1-1.46 1.495l-1.79.582a1.943 1.943 0 0 0 .029 3.677l1.752.57a2.368 2.368 0 0 1 1.5 1.506l.582 1.788c.134.38.382.709.71.941M30.86 34.04l-.118-.039l.14-.049a4.877 4.877 0 0 0 3.043-3.091l.04-.121l.04.128a4.87 4.87 0 0 0 3.092 3.089l.156.05l-.121.04a4.871 4.871 0 0 0-3.093 3.095l-.04.121l-.04-.123a4.872 4.872 0 0 0-3.1-3.1" />
+                d="M17.457 31.51a2.673 2.673 0 0 0 3.08.008c.404-.288.722-.682.916-1.139l1.236-3.769a6.159 6.159 0 0 1 3.9-3.9l3.631-1.183a2.67 2.67 0 0 0 0-5.036l-3.7-1.193a6.176 6.176 0 0 1-3.895-3.888l-1.179-3.629a2.663 2.663 0 0 0-.976-1.291a2.713 2.713 0 0 0-3.085 0a2.68 2.68 0 0 0-.987 1.32l-1.193 3.667a6.166 6.166 0 0 1-3.796 3.818l-3.627 1.178a2.67 2.67 0 0 0 .03 5.047l3.587 1.165a6.185 6.185 0 0 1 3.902 3.91l1.18 3.623c.183.521.524.973.975 1.292m1.704-2.122l-.062.081a.179.179 0 0 1-.199-.006a.195.195 0 0 1-.052-.052l-1.17-3.6a8.608 8.608 0 0 0-2.092-3.401a8.704 8.704 0 0 0-3.405-2.1l-3.569-1.154a.185.185 0 0 1-.083-.064a.164.164 0 0 1-.03-.1a.18.18 0 0 1 .032-.1a.22.22 0 0 1 .052-.051l3.62-1.175a8.7 8.7 0 0 0 3.344-2.109a8.725 8.725 0 0 0 2.027-3.28l1.188-3.661a.17.17 0 0 1 .163-.114a.179.179 0 0 1 .153.085l1.172 3.6a8.692 8.692 0 0 0 2.093 3.385a8.716 8.716 0 0 0 3.4 2.1l3.6 1.168l.066.019a.169.169 0 0 1 .09.151c0 .036-.01.07-.03.1a.286.286 0 0 1-.049.05l-3.61 1.171a8.653 8.653 0 0 0-5.489 5.49zm13.714 11.254a1.95 1.95 0 0 0 1.124.359l.005.003a1.946 1.946 0 0 0 1.844-1.328l.569-1.75a2.382 2.382 0 0 1 1.499-1.502l1.79-.582a1.946 1.946 0 0 0 .94-2.958a1.961 1.961 0 0 0-1.005-.73l-1.757-.569a2.375 2.375 0 0 1-1.5-1.5l-.582-1.789a1.944 1.944 0 0 0-3.679.03l-.572 1.757a2.377 2.377 0 0 1-1.46 1.495l-1.79.582a1.943 1.943 0 0 0 .029 3.677l1.752.57a2.368 2.368 0 0 1 1.5 1.506l.582 1.788c.134.38.382.709.71.941M30.86 34.04l-.118-.039l.14-.049a4.877 4.877 0 0 0 3.043-3.091l.04-.121l.04.128a4.87 4.87 0 0 0 3.092 3.089l.156.05l-.121.04a4.871 4.871 0 0 0-3.093 3.095l-.04.121l-.04-.123a4.872 4.872 0 0 0-3.1-3.1" />
             </svg>
             download full resume
           </div>
-          <div class=" bg-black/30  relative w-12 h-full flex justify-center items-center" >
+          <div class=" bg-black/30  relative w-12 h-full flex justify-center items-center">
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 20h12M12 4v12m0 0l3.5-3.5M12 16l-3.5-3.5"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M6 20h12M12 4v12m0 0l3.5-3.5M12 16l-3.5-3.5" />
+            </svg>
           </div>
         </a>
       </div>
-      
+
     </div>
 
 

@@ -29,8 +29,8 @@ function clickHandler (a: any) {
   
       }" aria-label="My Favorite Images" class="h-full flex justify-center items-center">
         <!-- @splide:moved="log" -->
-        <SplideSlide v-for="(src, inx) in images" :key="inx" class="grid place-items-center">
-          <img class="js-image h-full w-full object-contain transition-all duration-500 max-w-sm" :src loading="lazy">
+        <SplideSlide v-for="(src, inx) in images" :key="inx" class="grid place-items-center ">
+          <img class="js-image h-full w-full object-contain transition-all duration-500 max-w-[80vw]" :src loading="lazy">
         </SplideSlide>
       </Splide>
     </ClientOnly>

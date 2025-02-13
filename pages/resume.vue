@@ -9,14 +9,31 @@ const resume = [
       title: 'nikpeyvand',
       description: 'Nikpeyvand is a comprehensive application for the communication network of alumni centers, commissioned by the Nikan Cultural Institute.',
       href: 'https://nikpeyvand.com/discover',
-      images: ['nikpeyvand.jpg','zistdialogue.jpg'],
+      images: ['nikpeyvand.jpg',
+      'nikpeyvand-2.png',
+      'nikpeyvand-3.png',
+      'nikpeyvand-4.png',
+      'nikpeyvand-5.png',
+      'nikpeyvand-6.png',
+    ],
       jobTitle: 'lead developer / IT manager',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
         'nginx',
-        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'prisma_js'
+        'ubuntu', 'tailwind_css', 'nuxt_js', 'node_js', 'typescript', 'prisma_js'
       ]
       
+    },
+    {
+      avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',
+      title: 'Saba Pishro Control panel',
+      images: ['hero.jpg'],
+      jobTitle: 'fullstack web dev',
+      jobDescription: 'see screenshot on my Google Drive folder',
+      techStack: [
+        'nginx',
+        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+      ]
     },
     {
       avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',

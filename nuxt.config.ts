@@ -2,14 +2,14 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: {
-        enabled: true
-      },
-    // @ts-ignore
+  // @ts-ignore
+  devtools: {
+      enabled: true
+    },
+
   devServer: {
     port: 3001
   },
-
 
   app: {
     head: {
@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     }
     // pageTransition: { name: 'transition-rainbow', mode: 'out-in' },
   },
+
   css: ['~/assets/css/main.scss'],
 
   modules: [
@@ -42,7 +43,10 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt'
   ],
+
   pinia: {
     storesDirs: ['./stores/**'],
   },
+
+  compatibilityDate: '2025-02-13',
 })

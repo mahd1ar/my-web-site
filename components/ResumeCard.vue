@@ -20,7 +20,7 @@ defineEmits<{
 <template>
   <li class="mt-10 flex flex-col justify-center items-center gap-4 ">
     <img class="w-48" :src="avatar" alt="">
-    <h3 class="uppercase font-bold text-4xl md:hidden">
+    <h3 class="px-4 uppercase font-bold text-4xl md:hidden">
       <span class="text-cyan-300 text-3xl">{{ index }}.</span>
       {{ title }}
     </h3>
@@ -95,7 +95,7 @@ defineEmits<{
             </span>
           </div>
           <span class="relative inline-block h-6 sm:h-auto mt-4 sm:mt-0">
-            <TechStack class="absolute sm:-top-3" :items="techStack" />
+            <TechStack class=" sm:-top-3" :items="techStack" />
           </span>
         </li>
       </ul>

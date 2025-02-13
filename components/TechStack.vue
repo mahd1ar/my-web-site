@@ -1,20 +1,4 @@
 <script lang="ts" setup>
-
-export type Logo =
-  | 'tailwind'
-  | 'nuxt'
-  | 'vue'
-  | 'nginx'
-  | 'ubuntu'
-  | 'wordpress'
-  | 'webpack'
-  | 'prisma'
-  | 'vueuse'
-  | 'express'
-  | 'graphql'
-
-export type TechStachPropType = ({ logo: Logo; label: string } | Logo)[]
-
 defineProps({
   items: {
     type: Array as PropType<TechStachPropType>,
@@ -32,7 +16,8 @@ defineProps({
         class="flex flex-col items-center justify-center gap-1 flex-wrap"
       >
         <img
-          :src="`/tech_logos/${i.logo || i}.svg`"
+        loading="lazy"
+          :src="`https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/${i}.png`"
           class="w-7 h-7"
           :alt="i.label || i"
         />

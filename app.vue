@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import '@splidejs/vue-splide/css'
 import { onBeforeMount } from 'vue';
 import { useAppState } from './store/appState';
 

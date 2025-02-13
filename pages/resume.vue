@@ -2,69 +2,87 @@
 import { UseElementVisibility } from '@vueuse/components'
 import { LottieAnimation } from "lottie-web-vue"
 import WatermelonJSON from "../public/lottie/Animation - 1704279204978.json"
-import { type TechStachPropType } from '../components/TechStack.vue'
 
-const resume: {
-  avatar: string,
-  title: string,
-  heroImage: string,
-  jobTitle: string,
-  jobDescription: string,
-  techStack: TechStachPropType
-}[] = [
+const resume = [
     {
       avatar: '/gifs/resume/ZXC0PxDlsO9Vv29iy4.webp',
-      title: 'nikpeyvand co',
-      heroImage: 'nikpeyvand.jpg',
+      title: 'nikpeyvand',
+      description: 'Nikpeyvand is a comprehensive application for the communication network of alumni centers, commissioned by the Nikan Cultural Institute.',
+      href: 'https://nikpeyvand.com/discover',
+      images: ['nikpeyvand.jpg','zistdialogue.jpg'],
       jobTitle: 'lead developer / IT manager',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
         'nginx',
-        'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
+        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'prisma_js'
       ]
       
     },
     {
       avatar: '/gifs/resume/TF6ZSOZWtXVBOeMIc6.webp',
       title: 'nikan-alumni website',
-      heroImage: 'hero.jpg',
+      images: ['hero.jpg'],
       jobTitle: 'fullstack web dev',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
         'nginx',
-        'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
+        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
       ]
     },
     {
       avatar: '/gifs/resume/4PMPdM08TcBjRl1ukU.webp',
       title: 'zistdialogue website',
-      heroImage: 'zistdialogue.jpg',
+      images: ['zistdialogue.jpg'],
       jobTitle: 'fullstack web dev',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
         'nginx',
-        'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
+        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
       ]
     },
     {
       avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
       title: 'bisansair website',
-      heroImage: 'bisansair.jpg',
+      images: ['bisansair.jpg'],
       jobTitle: 'fullstack web dev',
       jobDescription: 'see screenshot on my Google Drive folder',
       techStack: [
         'nginx',
-        'ubuntu', 'tailwind', 'nuxt', 'wordpress', 'ubuntu'
+        'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
       ]
     },
   ]
 
 
+const imageViewer = reactive({
+  isOpen: false,
+  images: [] as string[],
+  startFromIndex: 0
+})
+
+function openImageViewer (resumeItemIndex: number, startFromIndex: number) {
+
+  imageViewer.images.splice(0,imageViewer.images.length)
+  
+  resume.at(resumeItemIndex)?.images.forEach(i => {
+    imageViewer.images.push(i)
+  })
+
+  const [nthItem] = imageViewer.images.splice(startFromIndex,1)
+  
+  imageViewer.images.unshift(nthItem)
+  
+  imageViewer.isOpen = true
+}
 
 </script>
 
 <template>
+ 
   <div class="w-full text-gray-50 relative ">
+
+     <ImageViewer v-model:is-open="imageViewer.isOpen" 
+  :images="imageViewer.images.map(i => '/resume/resume_card_pics/' + i)" />
     <img class="hidden md:block absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-.webp" />
     <img class="md:hidden absolute w-full opacity-70 top-0" src="/resume/the-90s-branding-patterns-mobile-2.webp" />
     <!-- v-if="danceState.getMusicState === 'play'" -->
@@ -96,8 +114,7 @@ const resume: {
     
     <div class="container mx-auto relative">
       <ul v-for="(i, index) in resume" :key="index">
-        <ResumeCard :index="index+1" :avatar="i.avatar" :title="i.title" :heroImage="i.heroImage" :jobDescription="i.jobDescription"
-          :jobTitle="i.jobTitle" :techStack="i.techStack" />
+        <ResumeCard @selected="inx => { openImageViewer(index,inx) }" v-bind="i" :index="index + 1" />
       </ul>
 
       <div class=" my-10 flex items-center justify-center">
@@ -110,7 +127,7 @@ const resume: {
               class="relative" ref="anim" />
             </div>
           </UseElementVisibility>
-        <a href="/docs/mahdiyar anari.pdf" target="_blank"
+        <a href="https://www.cake.me/mahdiyar-anari" target="_blank"
           class="text-lg flex h-12 bg-gradient-to-r from-pink-600 to-purple-500 text-white rounded-lg capitalize absolute mt-10">
           <div class=" px-4 flex items-center gap-1" >
 

@@ -8,8 +8,6 @@ pm2 delete netdom || echo "no process"
 
 sleep 2
 
-cd ~/public_html/netdomv3 || exit
-
 unset GIT_DIR
 
 git pull origin master

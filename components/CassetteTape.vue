@@ -219,8 +219,6 @@ const percentage = computed({
 </template>
 
 <style scoped lang="scss">
-@import "~/assets/css/cassette-tape-css/base";
-// @import '~/assets/css/cassette-tape-css/normalize';
-@import "~/assets/css/cassette-tape-css/tape";
-// @import "~/assets/css/cassette-tape-css/progress-range";
+@use "~/assets/css/cassette-tape-css/base";
+@use "~/assets/css/cassette-tape-css/tape";
 </style>

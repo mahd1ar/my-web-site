@@ -19,7 +19,7 @@ defineEmits<{
 </script>
 
 <template>
-  <li class="mt-10 flex flex-col justify-center items-center gap-4 ">
+  <li class="mt-10 flex flex-col justify-center items-center gap-4 relative">
     <img class="w-48" :src="avatar" alt="">
     <h3 class="px-4 uppercase font-bold text-4xl md:hidden text-center">
       <span class="text-cyan-300 text-3xl">{{ index }}.</span>
@@ -27,20 +27,35 @@ defineEmits<{
     </h3>
 
     <ClientOnly>
-      <Splide ref="slider" dir="ltr" :options="{
-        lazyLoad: 'nearby',
-        perPage: 1,
-        pagination: false,
-        arrows: false,
-        height: '290px',
-        gap:'20px',
-        autoHeight: true,
-      }" aria-label="My Favorite Images" class="max-w-sm">
+<div class="relative" >
+  
+  <template v-if="(images?.length || 0) > 1" >
+    <div class="bg-gray-500/70 p-1 border z-10 top-1/2 absolute left-0 " >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16 5v2h-2V5zm-4 4V7h2v2zm-2 2V9h2v2zm0 2H8v-2h2zm2 2v-2h-2v2zm0 0h2v2h-2zm4 4v-2h-2v2z"/></svg>
+    </div>
+    <div class="bg-gray-500/70 p-1 border z-10 top-1/2 absolute right-0 " >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v2h2V5zm4 4V7h-2v2zm2 2V9h-2v2zm0 2h2v-2h-2zm-2 2v-2h2v2zm0 0h-2v2h2zm-4 4v-2h2v2z"/></svg>
+    </div>
+  </template>
+  
+  <Splide ref="slider" dir="ltr" :options="{
+    lazyLoad: 'nearby',
+    perPage: 1,
+    pagination: false,
+    arrows: false,
+    height: '290px',
+    gap:'20px',
+    autoHeight: true,
+  }" aria-label="My Favorite Images" class="max-w-sm">
         <!-- @splide:moved="log" -->
         <SplideSlide v-for="(src, inx) in images?.map(i => '/resume/resume_card_pics/' + i) ||[]" :key="inx" class="w-full">
           <img class="h-full w-full object-contain transition-all duration-500 " :src loading="lazy" @click="$emit('selected',inx)" >
         </SplideSlide>
+        
+        
       </Splide>
+    </div>
+
     </ClientOnly>
 
     <div class="p-4">
@@ -51,7 +66,7 @@ defineEmits<{
       <div class="max-w-md md:pl-10 text-gray-200" v-html="description" >
       </div>
      
-       <button v-if="more" class="text-cyan-300" popovertarget="my-popover">more ...</button>
+       <button v-if="more" class="text-cyan-300 md:pl-10" popovertarget="my-popover">more ...</button>
        
        <div ref="popoverel" v-if="more" class="max-w-[90vw] max-h-[90vh] p-0 border rounded backdrop:bg-black/75" popover id="my-popover"  >
 <div class="bg-cyan-500 text-gray-100 font-bold p-2 flex justify-between items-center"

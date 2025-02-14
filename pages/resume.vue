@@ -77,11 +77,25 @@ Ability to send messages via Telegram bot
       'saba-2.jpg',
       'saba-3.png',
     ],
-    jobTitle: 'fullstack web dev',
+    jobTitle: 'fullstack web dev (Solo Project)',
     href: '',
     techStack: [
       'nginx',
       'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+    ]
+  },
+  {
+    avatar: '/gifs/resume/i3bRxMgplt58WdTYF0.webp',
+    title: 'The Rooberoo Mansion',
+    description: ' The Rooberoo Mansion\'s application is an online platform for booking cinema and theater seats, implemented in real-time using web sockets.',
+    images: [
+      '2810285c-a19c-40cd-8527-c3b65c83b9c3.avif',
+    ],
+    jobTitle: 'frontend developer and ui/ux designer, (Member of IT team)',
+    href: '',
+    techStack: [
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'python','django', 'web_socket'
     ]
   },
   {
@@ -106,7 +120,7 @@ Ability to send messages via Telegram bot
       'nikan-3.png',
       'nikan-4.png',
     ],
-    jobTitle: 'designer and full stack developer of website',
+    jobTitle: 'designer and full stack developer of website (Solo Project)',
     href: 'https://nikan-alumni.com',
     techStack: [
       'figma',
@@ -116,7 +130,7 @@ Ability to send messages via Telegram bot
   },
   {
     avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
-    title: 'bisansair website',
+    title: 'Bisansair website (Member of IT team)',
     images: [
       'bisansair-2.png',
       'bisansair-3.png'
@@ -133,10 +147,11 @@ Ability to send messages via Telegram bot
     title: 'zistdialogue website',
     images: ['zistdialogue.jpg'],
     jobTitle: 'fullstack web dev',
-    href: 'see screenshot on my Google Drive folder',
+    href: '',
+    more: '',
     techStack: [
       'nginx',
-      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+      'ubuntu', 'tailwind_css', 'nuxt_js',  'keyston_js'
     ]
   },
 

@@ -16,6 +16,8 @@ defineProps({
 defineEmits<{
   selected: [inx: number] 
 }>()
+
+
 </script>
 
 <template>
@@ -75,7 +77,7 @@ defineEmits<{
 
 <div @click="() => { $refs.popoverel.hidePopover()}" class="bg-black hover:bg-opacity-65 p-2 " >X</div>
 </div>
-<div class="p-4" v-html="more" ></div>
+<div class="p-4 whitespace-break-spaces max-w-lg" v-html="more" ></div>
         </div>
          
         
@@ -103,7 +105,7 @@ defineEmits<{
               [ link ]
             </span>
           </div>
-          <a href="#" class="underline  font-bold underline-offset-2 ">{{ href }}
+          <a href="#" class="underline  font-bold underline-offset-2 ">{{  href }}
 
             <span class="  rounded-sm   inline-block">
               <svg class="w-5 " viewBox="0 0 24 24">

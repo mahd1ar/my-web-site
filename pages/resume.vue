@@ -8,6 +8,18 @@ const resume = [
     avatar: '/gifs/resume/ZXC0PxDlsO9Vv29iy4.webp',
     title: 'nikpeyvand',
     description: 'Nikpeyvand is a comprehensive application for the communication network of alumni centers, commissioned by the Nikan Cultural Institute.',
+    more: `
+    For each member of the Alumni Association, a user profile has been defined, allowing them to log into the system and enter their personal information.  
+Personal information includes first and last name, contact details, biography, place of residence, education, and employment.  
+Graduates also have the option to add their businesses separately, enabling them to search for similar businesses and establish effective connections.  
+The Alumni Association manager can also use this platform to manage their workflows, including event management and payment processing.  
+Through the in-app features:  
+- Sending notifications to users  
+- Form builder for surveys, polls, and data collection  
+- Media and image gallery  
+- A beautiful, modern, attractive, and user-friendly interface for users.
+    
+    `,
     href: 'https://nikpeyvand.com/discover',
     images: ['nikpeyvand.jpg',
       'nikpeyvand-2.png',
@@ -130,12 +142,12 @@ Ability to send messages via Telegram bot
   },
   {
     avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
-    title: 'Bisansair website (Member of IT team)',
+    title: 'Bisansair website ',
     images: [
       'bisansair-2.png',
       'bisansair-3.png'
     ],
-    jobTitle: 'frontend developer',
+    jobTitle: 'frontend developer (Member of IT team)',
     href: 'https://bisanseir.com/',
     techStack: [
       'html', 'css', 'alpine_js',
@@ -254,7 +266,7 @@ function openImageViewer(resumeItemIndex: number, startFromIndex: number) {
     </div>
 
 
-    <RetroPalm class="my-44" />
+    <RetroPalm class="my-24" />
   </div>
 </template>
 

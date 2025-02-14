@@ -43,7 +43,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(https://78.media.tumblr.com/6fbf1edc445d7210e02d20e6e342287a/tumblr_ozop06XvsX1vq64mxo1_1280.png) 55% 5vmin no-repeat;
+  background: url(/img/tumblr_ozop06XvsX1vq64mxo1_1280.png) 55% 5vmin no-repeat;
   background-size: 70%;
   filter:
     brightness(0%) blur(.5px);

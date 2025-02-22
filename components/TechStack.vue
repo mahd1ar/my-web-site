@@ -34,7 +34,7 @@ function clog(){
         :alt="i"
         />
       </ClientOnly>
-        <span class="text-xs font-mono"> {{  i }}</span>
+        <span class="text-xs font-mono"> {{  i.split('_').at(0) }}</span>
       </div>
     </div>
   </div>

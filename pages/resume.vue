@@ -113,16 +113,19 @@ Ability to send messages via Telegram bot
     notice: 'This application is under development.'
   },
   {
-    avatar: '/gifs/resume/QzD2McTKDsvQlS6aUd.webp',
-    title: 'carizan co',
+    avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
+    title: 'Tadvam Sanat co',
+    description: 'Tadvam Sanat is the leader in designing and manufacturing airport equipment in Iran',
     images: [
-      'carizan.png',
+      'tadvamsanat-1.png',
+      'tadvamsanat.png',
+      
     ],
-    jobTitle: 'full stack developer of website',
-    href: 'https://carizanin.com/pich-gostar',
+    jobTitle: 'Senior developer of airport equipment navigation system. Full stack website designer and programmer.',
+    href: 'https://tadvamsanat.com',
     techStack: [
       'nginx',
-      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'keystone_js','supabase', 'docker', 'reactnative_js'
     ]
   },
   {
@@ -143,7 +146,21 @@ Ability to send messages via Telegram bot
     ]
   },
   {
-    avatar: '/gifs/resume/0cM4V36f68NqYrravk.webp',
+    avatar: '/gifs/resume/QzD2McTKDsvQlS6aUd.webp',
+    title: 'carizan co',
+    images: [
+      'carizan.png',
+    ],
+    jobTitle: 'full stack developer of website',
+    href: 'https://carizanin.com/pich-gostar',
+    techStack: [
+      'nginx',
+      'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
+    ]
+  },
+ 
+  {
+    avatar: '/gifs/resume/taki taki dance Sticker by DJ Snake.gif',
     title: 'Bisansair website ',
     images: [
       'bisansair-2.png',

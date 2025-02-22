@@ -10,7 +10,8 @@ defineProps({
   jobTitle: String,
   href: String,
   techStack: Array as PropType<string[]>,
-  more: String
+  more: String,
+  notice: String
 })
 
 defineEmits<{
@@ -83,6 +84,7 @@ defineEmits<{
         
       
       <ul>
+        
         <li
           class="font-mono mt-4 text-based sm:text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center">
           <div class="flex items-center gap-1 flex-shrink-0">
@@ -105,7 +107,7 @@ defineEmits<{
               [ link ]
             </span>
           </div>
-          <a href="#" class="underline  font-bold underline-offset-2 ">{{  href }}
+          <a :href="href" target="_blank" class="underline  font-bold underline-offset-2 ">{{  href }}
 
             <span class="  rounded-sm   inline-block">
               <svg class="w-5 " viewBox="0 0 24 24">
@@ -129,6 +131,17 @@ defineEmits<{
           <span class="relative inline-block h-6 sm:h-auto mt-4 sm:mt-0">
             <TechStack class=" sm:-top-3" :items="techStack" />
           </span>
+        </li>
+
+        <li v-if="notice"
+          class="font-mono mt-4 text-based sm:text-lg text-gray-300 flex sm:flex-row flex-col gap-1 items-start sm:items-center">
+          <div class="text-yellow-500 flex items-center gap-1 flex-shrink-0">
+
+            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M13 1h-2v2H9v2H7v2H5v2H3v2H1v2h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2v-2h-2V9h-2V7h-2V5h-2V3h-2zm0 2v2h2v2h2v2h2v2h2v2h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3v-2h2V9h2V7h2V5h2V3zm0 4h-2v6h2zm0 8h-2v2h2z"/></svg>
+            <span > [ notice ] </span>
+          </div>
+          {{ notice }}
+
         </li>
       </ul>
     </div>

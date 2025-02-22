@@ -94,7 +94,8 @@ Ability to send messages via Telegram bot
     techStack: [
       'nginx',
       'ubuntu', 'tailwind_css', 'nuxt_js', 'wordpress', 'linux'
-    ]
+    ],
+    notice: 'The use of this application is exclusive.'
   },
   {
     avatar: '/gifs/resume/i3bRxMgplt58WdTYF0.webp',
@@ -108,7 +109,8 @@ Ability to send messages via Telegram bot
     techStack: [
       'nginx',
       'ubuntu', 'tailwind_css', 'nuxt_js', 'python','django', 'web_socket'
-    ]
+    ],
+    notice: 'This application is under development.'
   },
   {
     avatar: '/gifs/resume/QzD2McTKDsvQlS6aUd.webp',

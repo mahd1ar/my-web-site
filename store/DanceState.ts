@@ -10,6 +10,12 @@ export const useDanceState = defineStore('DanceState', {
         },
 
         setMusicIsloaded() {
+            if(import.meta.env.DEV) {
+                setTimeout(() => {
+                    this._isMusicLoaded = true;
+                    
+                }, 2000);
+            } else
             this._isMusicLoaded = true;
         },
 

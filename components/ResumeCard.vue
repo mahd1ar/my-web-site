@@ -18,6 +18,18 @@ defineEmits<{
   selected: [inx: number] 
 }>()
 
+const splide = useTemplateRef('splide')
+
+function next () {
+
+  splide.value.go('+1')
+}
+
+function prev () {
+  
+  splide.value.go('-1')
+  
+}
 
 </script>
 
@@ -33,15 +45,15 @@ defineEmits<{
 <div class="relative" >
   
   <template v-if="(images?.length || 0) > 1" >
-    <div class="bg-gray-500/70 p-1 border z-10 top-1/2 absolute left-0 " >
+    <div @click="prev" class="bg-gray-500/70 p-1 border z-10 top-1/2 absolute left-0 " >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16 5v2h-2V5zm-4 4V7h2v2zm-2 2V9h2v2zm0 2H8v-2h2zm2 2v-2h-2v2zm0 0h2v2h-2zm4 4v-2h-2v2z"/></svg>
     </div>
-    <div class="bg-gray-500/70 p-1 border z-10 top-1/2 absolute right-0 " >
+    <div @click="next" class="bg-gray-500/70 p-1 border z-10 top-1/2 absolute right-0 " >
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v2h2V5zm4 4V7h-2v2zm2 2V9h-2v2zm0 2h2v-2h-2zm-2 2v-2h2v2zm0 0h-2v2h2zm-4 4v-2h2v2z"/></svg>
     </div>
   </template>
   
-  <Splide ref="slider" dir="ltr" :options="{
+  <Splide ref="splide" dir="ltr" :options="{
     lazyLoad: 'nearby',
     perPage: 1,
     pagination: false,

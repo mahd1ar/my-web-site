@@ -124,7 +124,9 @@ const percentage = computed({
       </div>
     </div>
 
-  <div class="relative flex justify-center gap-2 -translate-y-4 md:translate-y-4 ">
+  <div class="relative flex justify-center gap-2 -translate-y-4 md:translate-y-4 bg-black sm:border-4 border-pink-400/20 sm:px-2 "
+  
+  >
       <ClientOnly>
         <audio ref="audioEl" controls @loadedmetadata="danceState.setMusicIsloaded()"
           @pause="danceState.setMusicState('pause')" @play="danceState.setMusicState('play')"
@@ -146,7 +148,7 @@ const percentage = computed({
             " class="w-full h-full relative" viewBox="0 0 24 24">
             <path fill="currentColor" d="M10 20H8V4h2v2h2v3h2v2h2v2h-2v2h-2v3h-2v2z" />
           </svg>
-          <svg v-else-if="danceState.getMusicState === 'halt'" class="w-full h-full p-4 relative"  viewBox="0 0 24 24">
+          <svg v-else-if="danceState.getMusicState === 'halt'" class="w-full h-full p-4 relative scale-125  animate-pulse"  viewBox="0 0 24 24">
             <path fill="currentColor"
               d="M18 2H6v6h2v2h2v4H8v2H6v6h12v-6h-2v-2h-2v-4h2V8h2V2zm-2 6h-2v2h-4V8H8V4h8v4zm-2 6v2h2v4H8v-4h2v-2h4z" />
           </svg>
@@ -165,7 +167,7 @@ const percentage = computed({
           <span class=" text-lg sm:text-xl font-mono">8 Bit Universe  </span>
         </div>
         <div class="h-16 w-full p-2 relative ">
-          <div class="relative bg-black p-2 h-full" >
+          <div class="relative p-2 h-full" >
             <i
             style="left: 0.5rem ; top: 0.5rem" 
             class="absolute w-2 h-2 bg-black inline-block  z-10" />
@@ -203,9 +205,9 @@ const percentage = computed({
               
               <input v-model="percentage" type="range" class="w-full absolute inset-0 opacity-0" min="0" max="100" >
             
-              <div class="flex justify-between mt-4 font-mono" >
+              <div class="flex justify-between mt-2 font-mono z-50 relative bg-black" >
   
-                <div>00:00</div>
+            <div>{{ "0"+ ~~(duration * percentage/100 / 60) +  ":" + ~~(duration * percentage/100)%60 }}</div>
             <div>{{ "0"+ ~~(duration/60) +  ":" + ~~duration%60 }}</div>
               </div>
             </div>

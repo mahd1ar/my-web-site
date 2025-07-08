@@ -11,10 +11,10 @@ appState.changeStyle({
 })
 
 const navigation = ref([
+  { name: 'resume', link: 'resume' },
   { name: 'skills', link: 'skills' },
   { name: 'education', link: 'education' },
   { name: 'contact me', link: 'contact' },
-  { name: 'resume', link: 'resume' }
 ])
 
 const webdev = ref<HTMLDivElement>()

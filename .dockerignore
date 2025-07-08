@@ -1,0 +1,11 @@
+.output
+.nuxt
+node_modules
+.git
+.github
+README.md
+.gitignore
+.npmrc
+runme.sh
+dist
+component

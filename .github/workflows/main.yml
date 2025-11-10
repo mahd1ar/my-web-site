@@ -14,12 +14,12 @@ jobs:
 
     strategy:
       matrix:
-        node: [18.x]
+        node: [20.x]
 
     steps:
       - name: Sourcing nvm
         run: source ~/.nvm/nvm.sh
-        
+
       - name: Checkout 🛎
         uses: actions/checkout@master
 

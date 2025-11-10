@@ -64,3 +64,7 @@ echo "Starting server..."
 pm2 start "PORT=3022 node .output/server/index.mjs" --name netdom
 
 echo "Build process completed!"
+
+# Save the pm2 process list
+echo "Saving PM2 process list..."
+pm2 save

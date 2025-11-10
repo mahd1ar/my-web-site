@@ -19,6 +19,7 @@
     "sass": "^1.62.1"
   },
   "dependencies": {
+    "@mahdiyar/vue3-jalali-datepicker": "^0.0.1",
     "@nuxtjs/device": "^3.2.4",
     "@nuxtjs/tailwindcss": "^6.13.1",
     "@pinia/nuxt": "^0.10.1",

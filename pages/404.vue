@@ -1,3 +1,10 @@
+<script setup lang="ts">
+import jalali from '@mahdiyar/vue3-jalali-datepicker'
+
+onMounted(() => {
+    console.log(jalali)
+})
+</script>
 <template>
 <div class="bg-black w-full" >
     <img src="~/assets/gifs/pong-404.gif" alt="">
@@ -8,5 +15,7 @@
         &lt;
 GO HOME
     </nuxt-link>
+
+
 </div>
 </template>

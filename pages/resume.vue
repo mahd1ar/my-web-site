@@ -85,6 +85,7 @@ Ability to send messages via Telegram bot
 
       `,
     images: [
+      'saba0.jpg',
       'saba-1.png',
       'saba-2.jpg',
       'saba-3.png',

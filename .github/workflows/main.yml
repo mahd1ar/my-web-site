@@ -17,6 +17,9 @@ jobs:
         node: [18.x]
 
     steps:
+      - name: Sourcing nvm
+        run: source ~/.nvm/nvm.sh
+        
       - name: Checkout 🛎
         uses: actions/checkout@master
 

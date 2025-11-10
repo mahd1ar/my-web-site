@@ -681,13 +681,6 @@
   resolved "https://registry.yarnpkg.com/@kwsites/promise-deferred/-/promise-deferred-1.1.1.tgz#8ace5259254426ccef57f3175bc64ed7095ed919"
   integrity sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==
 
-"@mahdiyar/vue3-jalali-datepicker@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@mahdiyar/vue3-jalali-datepicker/-/vue3-jalali-datepicker-0.0.1.tgz#aa9392f446b67863739dbcef7d6bba3f3c53789c"
-  integrity sha512-dwgLlBrWP98eQkMtkKIYrg1xK07OJnM/NlqU3CDCInlkS/oADNC2sgzN8CinzEWhlcHsE9D3b8OJGQuLX867zA==
-  dependencies:
-    vue "^3.5.13"
-
 "@mapbox/node-pre-gyp@^2.0.0-rc.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@mapbox/node-pre-gyp/-/node-pre-gyp-2.0.0.tgz#16d1d9049c0218820da81a12ae084e7fe67790d1"

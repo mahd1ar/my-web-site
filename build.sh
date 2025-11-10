@@ -1,5 +1,38 @@
 #!/bin/bash
 
+set -e
+# Check if pm2, yarn, and git are installed
+if ! command -v pm2 &> /dev/null; then
+    echo "pm2 is not installed. Please install pm2."
+    exit 1
+fi
+
+if ! command -v yarn &> /dev/null; then
+    echo "yarn is not installed. Please install yarn."
+    exit 1
+fi
+
+if ! command -v git &> /dev/null; then
+    echo "git is not installed. Please install git."
+    exit 1
+fi
+
+SCRIPT_DIR=$(dirname "$0")
+
+cd "$SCRIPT_DIR"
+
+
+echo "🔪 kill current process"
+
+sleep 2
+
+git restore .
+
+unset GIT_DIR
+
+git pull origin master
+
+
 # Build script generated from GitHub Actions workflow
 
 echo "Starting build process..."
